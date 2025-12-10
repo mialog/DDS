@@ -1,0 +1,61 @@
+/* Mixins - Utils (다용성 기능) */
+// 이미지에 텍스트 표기
+@mixin text-img {
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+/* 영역 수평, 수직, 중앙 정렬 처리
+$position width: 가로 가운데 정렬, vertical: 세로 가운데 정렬, middle: 중앙 정렬*/
+@mixin position-array($position) {
+  position: absolute;
+
+  @if $position == width {
+    left: 50%;
+    transform: translateX(-50%);
+  } @else if $position == vertical {
+    top: 50%;
+    transform: translateY(-50%);
+  } @else {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@mixin text-line($lineCount: 1) {
+  @if $lineCount == 1 {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  } @else {
+    -webkit-box-orient: vertical;
+    display: block;
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-all;
+    -webkit-line-clamp: $lineCount;
+  }
+}
+
+// float clear 처리
+@mixin clearfix {
+  &::after {
+    display: table;
+    clear: both;
+    width: 100%;
+    height: 1px;
+    content: '';
+  }
+}
+
+// 가상 선택자
+@mixin virtual($w, $h) {
+  content: '';
+  display: inline-block;
+  width: $w;
+  height: $h;
+  @content;
+}

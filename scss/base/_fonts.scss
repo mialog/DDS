@@ -1,0 +1,278 @@
+/* Fonts - 웹 폰트 정의 */
+// Fonts Root
+$font-url: '../fonts/';
+
+// SUIT Variable
+@font-face {
+  font-family: 'SUIT Variable';
+  font-weight: 100 900;
+  font-display: swap;
+  src: url($font-url + 'SUIT-Variable.woff2') format('woff2-variations');
+}
+
+// Noto Sans CJK KR
+@font-face {
+  font-family: 'Noto Sans CJK KR';
+  font-style: normal;
+  font-weight: 100;
+  font-display: swap;
+  src:
+    url($font-url + 'NotoSansKR-Light.woff2') format('woff2'),
+    url($font-url + 'NotoSansKR-Light.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Noto Sans CJK KR';
+  font-style: normal;
+  font-weight: normal;
+  font-display: swap;
+  src:
+    url($font-url + 'NotoSansKR-Regular.woff2') format('woff2'),
+    url($font-url + 'NotoSansKR-Regular.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Noto Sans CJK KR';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src:
+    url($font-url + 'NotoSansKR-Medium.woff2') format('woff2'),
+    url($font-url + 'NotoSansKR-Medium.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Noto Sans CJK KR';
+  font-style: normal;
+  font-weight: bold;
+  font-display: swap;
+  src:
+    url($font-url + 'NotoSansKR-Bold.woff2') format('woff2'),
+    url($font-url + 'NotoSansKR-Bold.woff') format('woff');
+}
+
+// Roboto
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 100;
+  font-display: swap;
+  src:
+    url($font-url + 'Roboto-Light.woff2') format('woff2'),
+    url($font-url + 'Roboto-Light.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: normal;
+  font-display: swap;
+  src:
+    url($font-url + 'Roboto-Regular.woff2') format('woff2'),
+    url($font-url + 'Roboto-Regular.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src:
+    url($font-url + 'Roboto-Medium.woff2') format('woff2'),
+    url($font-url + 'Roboto-Medium.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src:
+    url($font-url + 'Roboto-Bold.woff2') format('woff2'),
+    url($font-url + 'Roboto-Bold.woff') format('woff');
+}
+
+// Pretendard
+/*
+Copyright (c) 2021 Kil Hyung-jin, with Reserved Font Name Pretendard.
+https://github.com/orioncactus/pretendard
+
+This Font Software is licensed under the SIL Open Font License, Version 1.1.
+This license is copied below, and is also available with a FAQ at:
+http://scripts.sil.org/OFL
+*/
+
+@font-face {
+  font-family: 'Pretendard Variable';
+  font-weight: 45 920;
+  font-style: normal;
+  font-display: swap;
+  src: url($font-url + 'PretendardVariable.woff2') format('woff2-variations');
+}
+
+/*
+  [OPTIMIZATION NOTE]
+  The static Pretendard fonts below are redundant if you use 'Pretendard Variable' font.
+  Using the variable font is recommended for better performance.
+  These definitions are commented out to prevent them from being loaded in this project.
+  You can uncomment them if they are needed for other projects that don't use variable fonts.
+
+@font-face {
+  font-family: 'Pretendard';
+  font-weight: 900;
+  font-display: swap;
+  src:
+    local('Pretendard Black'),
+    url($font-url + 'Pretendard-Black.woff2') format('woff2'),
+    url($font-url + 'Pretendard-Black.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  font-weight: 800;
+  font-display: swap;
+  src:
+    local('Pretendard ExtraBold'),
+    url($font-url + 'Pretendard-ExtraBold.woff2') format('woff2'),
+    url($font-url + 'Pretendard-ExtraBold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  font-weight: 700;
+  font-display: swap;
+  src:
+    local('Pretendard Bold'),
+    url($font-url + 'Pretendard-Bold.woff2') format('woff2'),
+    url($font-url + 'Pretendard-Bold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  font-weight: 600;
+  font-display: swap;
+  src:
+    local('Pretendard SemiBold'),
+    url($font-url + 'Pretendard-SemiBold.woff2') format('woff2'),
+    url($font-url + 'Pretendard-SemiBold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  font-weight: 500;
+  font-display: swap;
+  src:
+    local('Pretendard Medium'),
+    url($font-url + 'Pretendard-Medium.woff2') format('woff2'),
+    url($font-url + 'Pretendard-Medium.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  font-weight: 400;
+  font-display: swap;
+  src:
+    local('Pretendard Regular'),
+    url($font-url + 'Pretendard-Regular.woff2') format('woff2'),
+    url($font-url + 'Pretendard-Regular.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  font-weight: 300;
+  font-display: swap;
+  src:
+    local('Pretendard Light'),
+    url($font-url + 'Pretendard-Light.woff2') format('woff2'),
+    url($font-url + 'Pretendard-Light.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  font-weight: 200;
+  font-display: swap;
+  src:
+    local('Pretendard ExtraLight'),
+    url($font-url + 'Pretendard-ExtraLight.woff2') format('woff2'),
+    url($font-url + 'Pretendard-ExtraLight.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  font-weight: 100;
+  font-display: swap;
+  src:
+    local('Pretendard Thin'),
+    url($font-url + 'Pretendard-Thin.woff2') format('woff2'),
+    url($font-url + 'Pretendard-Thin.woff') format('woff');
+}
+*/
+
+// SpoqaHanSanNeo
+/**
+ * Copyright (c) 2015 Spoqa, Inc.
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining
+ * a copy of this software and associated documentation files (the
+ * "Software"), to deal in the Software without restriction, including
+ * without limitation the rights to use, copy, modify, merge, publish,
+ * distribute, sublicense, and/or sell copies of the Software, and to
+ * permit persons to whom the Software is furnished to do so, subject to
+ * the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be
+ * included in all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+ * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+ * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
+ * LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+ * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+ * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ */
+
+@font-face {
+  font-family: 'Spoqa Han Sans Neo';
+  font-weight: 700;
+  font-display: swap;
+  src:
+    url($font-url + 'SpoqaHanSansNeo-Bold.woff2') format('woff2'),
+    url($font-url + 'SpoqaHanSansNeo-Bold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Spoqa Han Sans Neo';
+  font-weight: 500;
+  font-display: swap;
+  src:
+    url($font-url + 'SpoqaHanSansNeo-Medium.woff2') format('woff2'),
+    url($font-url + 'SpoqaHanSansNeo-Medium.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Spoqa Han Sans Neo';
+  font-weight: 400;
+  font-display: swap;
+  src:
+    url($font-url + 'SpoqaHanSansNeo-Regular.woff2') format('woff2'),
+    url($font-url + 'SpoqaHanSansNeo-Regular.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Spoqa Han Sans Neo';
+  font-weight: 300;
+  font-display: swap;
+  src:
+    url($font-url + 'SpoqaHanSansNeo-Light.woff2') format('woff2'),
+    url($font-url + 'SpoqaHanSansNeo-Light.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Spoqa Han Sans Neo';
+  font-weight: 100;
+  font-display: swap;
+  src:
+    url($font-url + 'SpoqaHanSansNeo-Thin.woff2') format('woff2'),
+    url($font-url + 'SpoqaHanSansNeo-Thin.woff') format('woff');
+}

@@ -1,0 +1,14 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+*.code-workspace
+.idea/
+.vscode/
+
+# Dependencies
+node_modules/
+
+# Build outputs
+*.css.map

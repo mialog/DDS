@@ -1,0 +1,476 @@
+@use "../scss/abstracts/variables" as *;
+@use "../scss/abstracts/functions" as *;
+@use "../scss/abstracts/mixins/respond" as *;
+@use "../scss/abstracts/mixins/templete" as *;
+@use "../scss/abstracts/mixins/effect" as *;
+@use "../scss/base/root";
+
+/* ============================================
+   DDS Showcase Styles
+   ============================================ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: $font-base-rem;
+}
+
+body {
+  font-family: $font-family-brand;
+  font-size: rem(16);
+  line-height: 1.5;
+  color: var(--ds-text-primary);
+  background: var(--ds-bg-default);
+}
+
+.container {
+  max-width: px($container-width);
+  margin: 0 auto;
+  @include layout-padding();
+}
+
+/* ============================================
+   Header
+   ============================================ */
+.showcase-header {
+  background: linear-gradient(135deg, var(--ds-lightblue-50) 0%, var(--ds-blue-50) 100%);
+  color: var(--ds-neutral-0);
+  padding: px(60) 0;
+  text-align: center;
+
+  @include respondToMax(mobile) {
+    padding: px(40) 0;
+  }
+}
+
+.showcase-title {
+  @include font-display(large);
+  font-weight: $font-weight-bold;
+  margin-bottom: px(8);
+}
+
+.showcase-subtitle {
+  @include font-body(large);
+  opacity: 0.9;
+}
+
+/* ============================================
+   Navigation
+   ============================================ */
+.showcase-nav {
+  background: var(--ds-bg-default);
+  border-bottom: 1px solid var(--ds-border-default);
+  position: sticky;
+  top: 0;
+  z-index: var(--ds-index-header);
+}
+
+.nav-list {
+  display: flex;
+  gap: px(8);
+  list-style: none;
+  padding: px(16) 0;
+  overflow-x: auto;
+
+  li a {
+    display: block;
+    padding: px(8) px(16);
+    border-radius: px($radius-circle);
+    text-decoration: none;
+    color: var(--ds-text-secondary);
+    @include font-label(medium);
+    white-space: nowrap;
+    transition: all 0.2s ease;
+
+    &:hover {
+      background: var(--ds-bg-neutral);
+      color: var(--ds-text-primary);
+    }
+  }
+}
+
+/* ============================================
+   Sections
+   ============================================ */
+.section {
+  @include template-section(default);
+}
+
+.section--alt {
+  background: var(--ds-bg-neutral);
+}
+
+.section-title {
+  @include font-header(large);
+  font-weight: $font-weight-bold;
+  margin-bottom: px(8);
+}
+
+.section-desc {
+  @include font-body(medium);
+  color: var(--ds-text-tertiary);
+  margin-bottom: px(32);
+}
+
+.subsection {
+  margin-bottom: px(48);
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.subsection-title {
+  @include font-title(large);
+  font-weight: $font-weight-bold;
+  margin-bottom: px(20);
+  display: flex;
+  align-items: center;
+  gap: px(8);
+}
+
+/* ============================================
+   Badge
+   ============================================ */
+.badge {
+  display: inline-block;
+  padding: px(4) px(10);
+  border-radius: px($radius-circle);
+  @include font-label(small);
+  font-weight: $font-weight-medium;
+  background: var(--ds-bg-brand);
+  color: var(--ds-neutral-0);
+}
+
+.badge--accent {
+  background: var(--ds-bg-accent);
+}
+
+.badge--positive {
+  background: var(--ds-bg-positive);
+}
+
+.badge--caution {
+  background: var(--ds-bg-caution);
+  color: var(--ds-neutral-100);
+}
+
+.badge--negative {
+  background: var(--ds-bg-negative);
+}
+
+/* ============================================
+   Color Grid
+   ============================================ */
+.color-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: px(16);
+
+  @include respondToMax(mobile) {
+    grid-template-columns: repeat(3, 1fr);
+    gap: px(12);
+  }
+}
+
+.color-card {
+  background: var(--ds-bg-default);
+  border-radius: px($radius-pc-2);
+  overflow: hidden;
+  @include effect-small();
+}
+
+.color-swatch {
+  height: 80px;
+  border: 1px solid var(--ds-border-light);
+  border-bottom: none;
+
+  @include respondToMax(mobile) {
+    height: 60px;
+  }
+}
+
+.color-info {
+  padding: px(12);
+  display: flex;
+  flex-direction: column;
+  gap: px(4);
+
+  @include respondToMax(mobile) {
+    padding: px(8);
+  }
+}
+
+.color-name {
+  @include font-label(small);
+  font-weight: $font-weight-medium;
+  color: var(--ds-text-primary);
+}
+
+.color-value {
+  @include font-label(small);
+  color: var(--ds-text-tertiary);
+  font-family: monospace;
+}
+
+/* ============================================
+   Typography
+   ============================================ */
+.typo-list {
+  display: flex;
+  flex-direction: column;
+  gap: px(24);
+}
+
+.typo-item {
+  padding: px(20);
+  background: var(--ds-bg-default);
+  border-radius: px($radius-pc-2);
+  @include effect-small();
+}
+
+.typo-label {
+  display: inline-block;
+  @include font-label(small);
+  color: var(--ds-text-brand);
+  margin-bottom: px(8);
+  font-family: monospace;
+}
+
+.typo-spec {
+  display: block;
+  @include font-label(small);
+  color: var(--ds-text-tertiary);
+  margin-top: px(8);
+}
+
+.typo-display-large { @include font-display(large); font-weight: $font-weight-bold; }
+.typo-display-medium { @include font-display(medium); font-weight: $font-weight-bold; }
+.typo-display-small { @include font-display(small); font-weight: $font-weight-bold; }
+.typo-header-large { @include font-header(large); font-weight: $font-weight-bold; }
+.typo-header-medium { @include font-header(medium); font-weight: $font-weight-bold; }
+.typo-header-small { @include font-header(small); font-weight: $font-weight-bold; }
+.typo-title-large { @include font-title(large); font-weight: $font-weight-medium; }
+.typo-title-medium { @include font-title(medium); font-weight: $font-weight-medium; }
+.typo-title-small { @include font-title(small); font-weight: $font-weight-medium; }
+.typo-body-large { @include font-body(large); }
+.typo-body-medium { @include font-body(medium); }
+.typo-body-small { @include font-body(small); }
+.typo-label-large { @include font-label(large); }
+.typo-label-medium { @include font-label(medium); }
+.typo-label-small { @include font-label(small); }
+
+/* ============================================
+   Spacing Table
+   ============================================ */
+.spacing-table {
+  background: var(--ds-bg-default);
+  border-radius: px($radius-pc-2);
+  overflow: hidden;
+  @include effect-small();
+}
+
+.spacing-header {
+  display: grid;
+  grid-template-columns: 80px repeat(3, 1fr) 140px;
+  padding: px(16);
+  background: var(--ds-bg-neutral);
+  @include font-label(small);
+  font-weight: $font-weight-bold;
+  color: var(--ds-text-secondary);
+
+  @include respondToMax(mobile) {
+    grid-template-columns: 60px repeat(3, 1fr) 100px;
+    padding: px(12);
+  }
+}
+
+.spacing-row {
+  display: grid;
+  grid-template-columns: 80px repeat(3, 1fr) 140px;
+  padding: px(12) px(16);
+  border-top: 1px solid var(--ds-border-light);
+  @include font-body(small);
+  align-items: center;
+
+  @include respondToMax(mobile) {
+    grid-template-columns: 60px repeat(3, 1fr) 100px;
+    padding: px(10) px(12);
+  }
+}
+
+.spacing-level {
+  font-weight: $font-weight-bold;
+  color: var(--ds-text-brand);
+}
+
+.spacing-preview {
+  div {
+    height: 12px;
+    background: var(--ds-lightblue-50);
+    border-radius: 2px;
+  }
+}
+
+/* ============================================
+   Radius Grid
+   ============================================ */
+.radius-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: px(20);
+
+  @include respondToMax(mobile) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: px(16);
+  }
+}
+
+.radius-card {
+  text-align: center;
+}
+
+.radius-preview {
+  width: 100%;
+  height: 100px;
+  background: var(--ds-bg-default);
+  border: 2px solid var(--ds-lightblue-50);
+  margin-bottom: px(12);
+
+  @include respondToMax(mobile) {
+    height: 80px;
+  }
+}
+
+.radius-1 { border-radius: px($radius-pc-1); }
+.radius-2 { border-radius: px($radius-pc-2); }
+.radius-3 { border-radius: px($radius-pc-3); }
+.radius-4 { border-radius: px($radius-pc-4); }
+.radius-5 { border-radius: px($radius-pc-5); }
+.radius-6 { border-radius: px($radius-pc-6); }
+.radius-7 { border-radius: px($radius-pc-7); }
+.radius-circle { border-radius: px($radius-circle); }
+
+.radius-info {
+  display: flex;
+  flex-direction: column;
+  gap: px(4);
+}
+
+.radius-name {
+  @include font-label(medium);
+  font-weight: $font-weight-medium;
+}
+
+.radius-value {
+  @include font-label(small);
+  color: var(--ds-text-tertiary);
+  font-family: monospace;
+}
+
+/* ============================================
+   Effects Grid
+   ============================================ */
+.effect-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: px(24);
+
+  @include respondToMax(mobile) {
+    grid-template-columns: 1fr;
+    gap: px(16);
+  }
+}
+
+.effect-card {
+  background: var(--ds-bg-default);
+  padding: px(32);
+  border-radius: px($radius-pc-3);
+  text-align: center;
+}
+
+.effect-small { @include effect-small(); }
+.effect-big { @include effect-big(); }
+.effect-floating { @include effect-floating(); }
+.effect-modal { @include effect-modal(); }
+
+.effect-name {
+  display: block;
+  @include font-label(medium);
+  font-weight: $font-weight-bold;
+  margin-bottom: px(4);
+  font-family: monospace;
+}
+
+.effect-desc {
+  @include font-label(small);
+  color: var(--ds-text-tertiary);
+}
+
+/* ============================================
+   Semantic Tokens
+   ============================================ */
+.semantic-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: px(12);
+
+  @include respondToMax(mobile) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.semantic-card {
+  text-align: center;
+}
+
+.semantic-swatch {
+  width: 100%;
+  height: 60px;
+  border-radius: px($radius-pc-2);
+  margin-bottom: px(8);
+  border: 1px solid var(--ds-border-light);
+}
+
+.semantic-card span {
+  @include font-label(small);
+  color: var(--ds-text-secondary);
+  font-family: monospace;
+}
+
+.semantic-text-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: px(16);
+
+  @include respondToMax(mobile) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.semantic-text-item {
+  padding: px(16);
+  background: var(--ds-bg-default);
+  border-radius: px($radius-pc-2);
+  text-align: center;
+}
+
+.text-sample {
+  @include font-label(medium);
+  font-weight: $font-weight-medium;
+}
+
+/* ============================================
+   Footer
+   ============================================ */
+.showcase-footer {
+  background: var(--ds-neutral-100);
+  color: var(--ds-neutral-40);
+  padding: px(24) 0;
+  text-align: center;
+  @include font-label(small);
+}

@@ -1,0 +1,19 @@
+/* Functions - 사이즈 */
+@use 'sass:math';
+
+$font-base-vw: 1000 !default; // 폰트 view base size 사용
+
+/* px */
+@function px($size) {
+  @return #{$size}px;
+}
+
+/* rem */
+@function rem($size) {
+  @return #{calc($size / 10)}rem;
+}
+
+/* vw (px > vw Unit Conversion) */
+@function vw($target, $context: $font-base-vw) {
+  @return math.div($target, $context) * 1.4vw;
+}

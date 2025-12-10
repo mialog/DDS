@@ -1,0 +1,1165 @@
+/* Variables - DDS Core 변수 정의 - version 2.0 (Figma 동기화) */
+// Prefix for :root CSS Variables
+$variable-prefix: ds- !default;
+
+$url_img: '../images/';
+
+// ============================================
+// BASE SETTINGS
+// ============================================
+$font-base-rem: 62.5% !default;
+$font-base-px: 16 !default;
+
+// ============================================
+// FONT FAMILY
+// ============================================
+$pretendard-variable: 'Pretendard Variable' !default;
+$pretendard: 'Pretendard' !default;
+$tmoney-roundwind: 'Tmoney RoundWind' !default;
+$noto-sans-jp: 'Noto Sans JP' !default;
+$noto-sans-tc: 'Noto Sans TC' !default;
+$noto-sans-sc: 'Noto Sans SC' !default;
+$hakgyoansim: 'Hakgyoansim Dunggeunmiso TTF' !default;
+
+// Legacy fonts (하위 호환)
+$noto: 'Noto Sans CJK KR' !default;
+$roboto: 'Roboto' !default;
+$spoqa: 'Spoqa Han Sans Neo' !default;
+$suit: 'SUIT Variable' !default;
+
+$font-family-main: $pretendard-variable !default;
+$font-family-point: $tmoney-roundwind !default;
+$font-family-kids: $hakgyoansim !default;
+$font-family-ja: $noto-sans-jp !default;
+$font-family-zh-tw: $noto-sans-tc !default;
+$font-family-zh-cn: $noto-sans-sc !default;
+
+// Legacy aliases
+$font-family-sub: $noto !default;
+$font-family-tertiary: $roboto !default;
+$font-family-brand: $font-family-main, sans-serif !default;
+
+// ============================================
+// FONT WEIGHT
+// ============================================
+$font-weight-light: 300 !default;
+$font-weight-default: 500 !default;
+$font-weight-medium: 500 !default;
+$font-weight-bold: 700 !default;
+$font-weight-black: 800 !default;
+
+// Numeric weights
+$font-weight-100: 100 !default;
+$font-weight-200: 200 !default;
+$font-weight-300: 300 !default;
+$font-weight-400: 400 !default;
+$font-weight-500: 500 !default;
+$font-weight-600: 600 !default;
+$font-weight-700: 700 !default;
+$font-weight-800: 800 !default;
+$font-weight-900: 900 !default;
+
+// ============================================
+// LINE HEIGHT
+// ============================================
+$line-height-title: 136% !default;
+$line-height-default: 144% !default;
+$line-height-body: 168% !default;
+$line-height-body-mo: 160% !default;
+
+// Legacy (하위 호환)
+$line-height-condensed: 136% !default;
+$line-height-wide: 152% !default;
+$line-height-wider: 168% !default;
+$line-height-widest: 184% !default;
+
+// ============================================
+// LETTER SPACING
+// ============================================
+$letter-spacing-narrow: -1 !default;
+$letter-spacing-none: 0 !default;
+$letter-spacing-normal: 0 !default;
+$letter-spacing-wide: 4 !default;
+$letter-spacing-wide-mo: 3 !default;
+
+// Legacy
+$decoration-none: none !default;
+$decoration-underline: underline !default;
+
+// ============================================
+// RESPONSIVE BREAKPOINTS
+// ============================================
+// Mobile
+$responsive-min-mobile: 280 !default;
+$responsive-max-mobile: 767 !default;
+$responsive-default-mobile: 360 !default;
+
+// Tablet
+$responsive-min-tablet: 768 !default;
+$responsive-max-tablet: 1024 !default;
+$responsive-default-tablet: 768 !default;
+
+// Desktop (PC)
+$responsive-min-desktop: 1025 !default;
+$responsive-max-desktop: 9999 !default;
+$responsive-default-desktop: 1920 !default;
+
+// Legacy aliases
+$responsive-max-min: 500 !default;
+
+// ============================================
+// LAYOUT
+// ============================================
+$container-width: 1280 !default;
+$container-width-narrow: 960 !default;
+$container-width-wide: 1400 !default;
+
+// Horizontal padding per device
+$layout-padding-mo: 20 !default;
+$layout-padding-ta: 32 !default;
+$layout-padding-pc: 40 !default;
+
+// Body spacing
+$layout-body-top-mo: 16 !default;
+$layout-body-top-ta: 20 !default;
+$layout-body-top-pc: 32 !default;
+
+$layout-body-bottom-mo: 48 !default;
+$layout-body-bottom-ta: 60 !default;
+$layout-body-bottom-pc: 120 !default;
+
+// ============================================
+// OPACITY
+// ============================================
+$opacity-0: 0 !default;
+$opacity-8: 0.08 !default;
+$opacity-12: 0.12 !default;
+$opacity-24: 0.24 !default;
+$opacity-32: 0.32 !default;
+$opacity-40: 0.4 !default;
+$opacity-48: 0.48 !default;
+$opacity-60: 0.6 !default;
+$opacity-80: 0.8 !default;
+$opacity-96: 0.96 !default;
+$opacity-100: 1 !default;
+
+// ============================================
+// SPACING (Level-based system from Figma)
+// ============================================
+// Desktop (PC)
+$spacing-pc-1: 2 !default;
+$spacing-pc-2: 4 !default;
+$spacing-pc-3: 8 !default;
+$spacing-pc-4: 12 !default;
+$spacing-pc-5: 16 !default;
+$spacing-pc-6: 20 !default;
+$spacing-pc-7: 24 !default;
+$spacing-pc-8: 32 !default;
+$spacing-pc-9: 40 !default;
+$spacing-pc-10: 48 !default;
+$spacing-pc-11: 60 !default;
+$spacing-pc-12: 68 !default;
+$spacing-pc-13: 80 !default;
+$spacing-pc-14: 100 !default;
+$spacing-pc-15: 120 !default;
+
+// Tablet
+$spacing-ta-1: 2 !default;
+$spacing-ta-2: 4 !default;
+$spacing-ta-3: 8 !default;
+$spacing-ta-4: 10 !default;
+$spacing-ta-5: 14 !default;
+$spacing-ta-6: 18 !default;
+$spacing-ta-7: 22 !default;
+$spacing-ta-8: 30 !default;
+$spacing-ta-9: 36 !default;
+$spacing-ta-10: 44 !default;
+$spacing-ta-11: 52 !default;
+$spacing-ta-12: 60 !default;
+$spacing-ta-13: 80 !default;
+$spacing-ta-14: 92 !default;
+$spacing-ta-15: 112 !default;
+
+// Mobile
+$spacing-mo-1: 2 !default;
+$spacing-mo-2: 3 !default;
+$spacing-mo-3: 6 !default;
+$spacing-mo-4: 8 !default;
+$spacing-mo-5: 12 !default;
+$spacing-mo-6: 16 !default;
+$spacing-mo-7: 20 !default;
+$spacing-mo-8: 24 !default;
+$spacing-mo-9: 32 !default;
+$spacing-mo-10: 40 !default;
+$spacing-mo-11: 48 !default;
+$spacing-mo-12: 52 !default;
+$spacing-mo-13: 60 !default;
+$spacing-mo-14: 80 !default;
+$spacing-mo-15: 100 !default;
+
+// Legacy spacing (px-based naming for backward compatibility)
+$spacing-0: 0 !default;
+$spacing-4: 4 !default;
+$spacing-6: 6 !default;
+$spacing-8: 8 !default;
+$spacing-12: 12 !default;
+$spacing-16: 16 !default;
+$spacing-20: 20 !default;
+$spacing-24: 24 !default;
+$spacing-26: 26 !default;
+$spacing-32: 32 !default;
+$spacing-36: 36 !default;
+$spacing-38: 38 !default;
+$spacing-40: 40 !default;
+$spacing-48: 48 !default;
+$spacing-52: 52 !default;
+$spacing-60: 60 !default;
+$spacing-64: 64 !default;
+$spacing-80: 80 !default;
+
+$spacing-default: $spacing-16 !default;
+
+// ============================================
+// SIZE
+// ============================================
+$size-12: 12 !default;
+$size-16: 16 !default;
+$size-20: 20 !default;
+$size-24: 24 !default;
+$size-32: 32 !default;
+$size-36: 36 !default;
+$size-40: 40 !default;
+$size-48: 48 !default;
+$size-56: 56 !default;
+$size-64: 64 !default;
+$size-72: 72 !default;
+$size-88: 88 !default;
+$size-120: 120 !default;
+$size-136: 136 !default;
+$size-168: 168 !default;
+$size-200: 200 !default;
+
+// ============================================
+// BORDER
+// ============================================
+// Desktop/Tablet
+$border-1: 1 !default;
+$border-2: 2 !default;
+$border-3: 3 !default;
+$border-4: 4 !default;
+$border-8: 8 !default;
+
+// Mobile
+$border-mo-1: 1 !default;
+$border-mo-2: 1 !default;
+$border-mo-3: 2 !default;
+$border-mo-4: 3 !default;
+
+// ============================================
+// RADIUS (Level-based system from Figma)
+// ============================================
+// Desktop (PC)
+$radius-pc-1: 4 !default;
+$radius-pc-2: 8 !default;
+$radius-pc-3: 16 !default;
+$radius-pc-4: 24 !default;
+$radius-pc-5: 32 !default;
+$radius-pc-6: 40 !default;
+$radius-pc-7: 60 !default;
+$radius-pc-circle: 999 !default;
+
+// Tablet
+$radius-ta-1: 4 !default;
+$radius-ta-2: 8 !default;
+$radius-ta-3: 16 !default;
+$radius-ta-4: 24 !default;
+$radius-ta-5: 28 !default;
+$radius-ta-6: 32 !default;
+$radius-ta-7: 52 !default;
+$radius-ta-circle: 999 !default;
+
+// Mobile
+$radius-mo-1: 4 !default;
+$radius-mo-2: 8 !default;
+$radius-mo-3: 16 !default;
+$radius-mo-4: 20 !default;
+$radius-mo-5: 24 !default;
+$radius-mo-6: 30 !default;
+$radius-mo-7: 48 !default;
+$radius-mo-circle: 999 !default;
+
+// Legacy radius (px-based naming)
+$radius-8: 8 !default;
+$radius-12: 12 !default;
+$radius-14: 14 !default;
+$radius-16: 16 !default;
+$radius-20: 20 !default;
+$radius-24: 24 !default;
+$radius-32: 32 !default;
+$radius-36: 36 !default;
+$radius-40: 40 !default;
+$radius-60: 60 !default;
+$radius-circle: 999 !default;
+
+$radius-default: $radius-16 !default;
+
+// ============================================
+// FONT SIZE (Responsive from Figma)
+// ============================================
+// Display
+$font-size-display-large-pc: 56 !default;
+$font-size-display-large-ta: 48 !default;
+$font-size-display-large-mo: 42 !default;
+
+$font-size-display-medium-pc: 48 !default;
+$font-size-display-medium-ta: 42 !default;
+$font-size-display-medium-mo: 34 !default;
+
+$font-size-display-small-pc: 36 !default;
+$font-size-display-small-ta: 34 !default;
+$font-size-display-small-mo: 28 !default;
+
+// Header
+$font-size-header-large-pc: 34 !default;
+$font-size-header-large-ta: 32 !default;
+$font-size-header-large-mo: 28 !default;
+
+$font-size-header-medium-pc: 30 !default;
+$font-size-header-medium-ta: 28 !default;
+$font-size-header-medium-mo: 24 !default;
+
+$font-size-header-small-pc: 26 !default;
+$font-size-header-small-ta: 24 !default;
+$font-size-header-small-mo: 22 !default;
+
+// Title
+$font-size-title-large-pc: 24 !default;
+$font-size-title-large-ta: 22 !default;
+$font-size-title-large-mo: 20 !default;
+
+$font-size-title-medium-pc: 20 !default;
+$font-size-title-medium-ta: 19 !default;
+$font-size-title-medium-mo: 18 !default;
+
+$font-size-title-small-pc: 18 !default;
+$font-size-title-small-ta: 17 !default;
+$font-size-title-small-mo: 16 !default;
+
+// Body
+$font-size-body-large-pc: 20 !default;
+$font-size-body-large-ta: 19 !default;
+$font-size-body-large-mo: 18 !default;
+
+$font-size-body-medium-pc: 18 !default;
+$font-size-body-medium-ta: 17 !default;
+$font-size-body-medium-mo: 16 !default;
+
+$font-size-body-small-pc: 15 !default;
+$font-size-body-small-ta: 15 !default;
+$font-size-body-small-mo: 14 !default;
+
+// Label
+$font-size-label-large-pc: 19 !default;
+$font-size-label-large-ta: 18 !default;
+$font-size-label-large-mo: 17 !default;
+
+$font-size-label-medium-pc: 17 !default;
+$font-size-label-medium-ta: 16 !default;
+$font-size-label-medium-mo: 15 !default;
+
+$font-size-label-small-pc: 14 !default;
+$font-size-label-small-ta: 13 !default;
+$font-size-label-small-mo: 13 !default;
+
+// Legacy font size variables (for backward compatibility)
+$font-size-display-large: 80 !default;
+$font-size-display-medium: 68 !default;
+$font-size-display-small: 56 !default;
+$font-size-display-xsmall: 48 !default;
+$font-size-header-large: 44 !default;
+$font-size-header-medium: 40 !default;
+$font-size-header-small: 32 !default;
+$font-size-header-xsmall: 28 !default;
+$font-size-label-large: 24 !default;
+$font-size-label-medium: 20 !default;
+$font-size-label-small: 18 !default;
+$font-size-label-xsmall: 14 !default;
+$font-size-body-large: 20 !default;
+$font-size-body-medium: 18 !default;
+$font-size-body-small: 16 !default;
+$font-size-body-xsmall: 13 !default;
+
+// ============================================
+// CORE COLORS - Palette (from Figma)
+// ============================================
+// Neutral
+$neutral-0: #ffffff !default;
+$neutral-5: #f1f4f8 !default;
+$neutral-10: #e3e8ed !default;
+$neutral-20: #d4dce2 !default;
+$neutral-30: #c6d0d7 !default;
+$neutral-40: #abb6bf !default;
+$neutral-50: #8c98a1 !default;
+$neutral-60: #6a747c !default;
+$neutral-70: #545d64 !default;
+$neutral-80: #394046 !default;
+$neutral-90: #202427 !default;
+$neutral-100: #0b0d11 !default;
+
+// Blue
+$blue-5: #f3f6ff !default;
+$blue-10: #dae3ff !default;
+$blue-20: #b7c8ff !default;
+$blue-30: #8eabff !default;
+$blue-40: #628aff !default;
+$blue-50: #416df0 !default;
+$blue-60: #2856e0 !default;
+$blue-70: #1942bc !default;
+$blue-80: #0e2f91 !default;
+$blue-90: #082271 !default;
+
+// Light Blue (Brand)
+$lightblue-5: #edf8fc !default;
+$lightblue-10: #d2effa !default;
+$lightblue-20: #b4e6fb !default;
+$lightblue-30: #8ddaf9 !default;
+$lightblue-40: #57c7f3 !default;
+$lightblue-50: #15b2f1 !default;
+$lightblue-60: #049edc !default;
+$lightblue-70: #007daf !default;
+$lightblue-80: #045f84 !default;
+$lightblue-90: #06435b !default;
+
+// Green
+$green-5: #ecf8f2 !default;
+$green-10: #daf1e5 !default;
+$green-20: #b5e3cb !default;
+$green-30: #8fd5b0 !default;
+$green-40: #6ac796 !default;
+$green-50: #45b97c !default;
+$green-60: #269e5f !default;
+$green-70: #167d46 !default;
+$green-80: #145e37 !default;
+$green-90: #0a4325 !default;
+
+// Yellow
+$yellow-5: #fff8e7 !default;
+$yellow-10: #fff1d0 !default;
+$yellow-20: #fee3a1 !default;
+$yellow-30: #fed571 !default;
+$yellow-40: #feca4a !default;
+$yellow-50: #fdb913 !default;
+$yellow-60: #d89a00 !default;
+$yellow-70: #a37402 !default;
+$yellow-80: #6b4d03 !default;
+$yellow-90: #503800 !default;
+
+// Orange
+$orange-5: #fef1e9 !default;
+$orange-10: #fde3d3 !default;
+$orange-20: #fac7a6 !default;
+$orange-30: #f8ab7a !default;
+$orange-40: #f58f4d !default;
+$orange-50: #f37321 !default;
+$orange-60: #da6113 !default;
+$orange-70: #a54d16 !default;
+$orange-80: #6e330d !default;
+$orange-90: #482815 !default;
+
+// Red
+$red-5: #fef5f5 !default;
+$red-10: #fcdedf !default;
+$red-20: #f9b8bb !default;
+$red-30: #f68d91 !default;
+$red-40: #f4686d !default;
+$red-50: #e14d52 !default;
+$red-60: #ca393e !default;
+$red-70: #a32529 !default;
+$red-80: #7e0a0e !default;
+$red-90: #560407 !default;
+
+// Pink
+$pink-5: #fff3fb !default;
+$pink-10: #ffe2f5 !default;
+$pink-20: #ffc7ec !default;
+$pink-30: #ffa6d8 !default;
+$pink-40: #fd80cb !default;
+$pink-50: #fc60b4 !default;
+$pink-60: #de4397 !default;
+$pink-70: #ac3a77 !default;
+$pink-80: #832759 !default;
+$pink-90: #5b143a !default;
+
+// Violet
+$violet-5: #f6f2fc !default;
+$violet-10: #ebe3fb !default;
+$violet-20: #ddd2f9 !default;
+$violet-30: #cfbbf8 !default;
+$violet-40: #b58df9 !default;
+$violet-50: #9b6bf4 !default;
+$violet-60: #8154d4 !default;
+$violet-70: #6944af !default;
+$violet-80: #503585 !default;
+$violet-90: #392462 !default;
+
+// Legacy colors
+$royalblue: #667feb !default;
+$lime: #bddc24 !default;
+
+$grayscale-5: #F7F9FD !default;
+$grayscale-10: #F4F6FA !default;
+$grayscale-20: #E9EDF5 !default;
+$grayscale-30: #DAE0EC !default;
+$grayscale-40: #C6CCD9 !default;
+$grayscale-50: #ABB1BE !default;
+$grayscale-60: #8B919C !default;
+$grayscale-70: #6C727C !default;
+$grayscale-80: #575D67 !default;
+$grayscale-90: #3C4047 !default;
+$grayscale-100: #26292F !default;
+$grayscale-white: #fff !default;
+$grayscale-black: #16181B !default;
+
+// ============================================
+// ALPHA COLORS (from Figma)
+// ============================================
+// Black alpha
+$alpha-black-8: rgba($neutral-100, 0.08) !default;
+$alpha-black-12: rgba($neutral-100, 0.12) !default;
+$alpha-black-24: rgba($neutral-100, 0.24) !default;
+$alpha-black-32: rgba($neutral-100, 0.32) !default;
+$alpha-black-60: rgba($neutral-100, 0.60) !default;
+$alpha-black-80: rgba($neutral-100, 0.80) !default;
+$alpha-black-96: rgba($neutral-100, 0.96) !default;
+
+// White alpha
+$alpha-white-8: rgba($neutral-0, 0.08) !default;
+$alpha-white-12: rgba($neutral-0, 0.12) !default;
+$alpha-white-24: rgba($neutral-0, 0.24) !default;
+$alpha-white-32: rgba($neutral-0, 0.32) !default;
+$alpha-white-60: rgba($neutral-0, 0.60) !default;
+$alpha-white-80: rgba($neutral-0, 0.80) !default;
+$alpha-white-96: rgba($neutral-0, 0.96) !default;
+
+// Gray alpha
+$alpha-gray-8: rgba($neutral-50, 0.08) !default;
+$alpha-gray-12: rgba($neutral-50, 0.12) !default;
+$alpha-gray-24: rgba($neutral-50, 0.24) !default;
+$alpha-gray-32: rgba($neutral-50, 0.32) !default;
+$alpha-gray-60: rgba($neutral-50, 0.60) !default;
+$alpha-gray-80: rgba($neutral-50, 0.80) !default;
+$alpha-gray-96: rgba($neutral-50, 0.96) !default;
+
+// Blue alpha
+$alpha-blue-8: rgba($blue-50, 0.08) !default;
+$alpha-blue-12: rgba($blue-50, 0.12) !default;
+$alpha-blue-24: rgba($blue-50, 0.24) !default;
+$alpha-blue-32: rgba($blue-50, 0.32) !default;
+$alpha-blue-60: rgba($blue-50, 0.60) !default;
+$alpha-blue-80: rgba($blue-50, 0.80) !default;
+$alpha-blue-96: rgba($blue-50, 0.96) !default;
+
+// Lightblue alpha
+$alpha-lightblue-8: rgba($lightblue-50, 0.08) !default;
+$alpha-lightblue-12: rgba($lightblue-50, 0.12) !default;
+$alpha-lightblue-24: rgba($lightblue-50, 0.24) !default;
+$alpha-lightblue-32: rgba($lightblue-50, 0.32) !default;
+$alpha-lightblue-60: rgba($lightblue-50, 0.60) !default;
+$alpha-lightblue-80: rgba($lightblue-50, 0.80) !default;
+$alpha-lightblue-96: rgba($lightblue-50, 0.96) !default;
+
+// Green alpha
+$alpha-green-8: rgba($green-50, 0.08) !default;
+$alpha-green-12: rgba($green-50, 0.12) !default;
+$alpha-green-24: rgba($green-50, 0.24) !default;
+$alpha-green-32: rgba($green-50, 0.32) !default;
+$alpha-green-60: rgba($green-50, 0.60) !default;
+$alpha-green-80: rgba($green-50, 0.80) !default;
+$alpha-green-96: rgba($green-50, 0.96) !default;
+
+// Yellow alpha
+$alpha-yellow-8: rgba($yellow-50, 0.08) !default;
+$alpha-yellow-12: rgba($yellow-50, 0.12) !default;
+$alpha-yellow-24: rgba($yellow-50, 0.24) !default;
+$alpha-yellow-32: rgba($yellow-50, 0.32) !default;
+$alpha-yellow-60: rgba($yellow-50, 0.60) !default;
+$alpha-yellow-80: rgba($yellow-50, 0.80) !default;
+$alpha-yellow-96: rgba($yellow-50, 0.96) !default;
+
+// Orange alpha
+$alpha-orange-8: rgba($orange-50, 0.08) !default;
+$alpha-orange-12: rgba($orange-50, 0.12) !default;
+$alpha-orange-24: rgba($orange-50, 0.24) !default;
+$alpha-orange-32: rgba($orange-50, 0.32) !default;
+$alpha-orange-60: rgba($orange-50, 0.60) !default;
+$alpha-orange-80: rgba($orange-50, 0.80) !default;
+$alpha-orange-96: rgba($orange-50, 0.96) !default;
+
+// Red alpha
+$alpha-red-8: rgba($red-50, 0.08) !default;
+$alpha-red-12: rgba($red-50, 0.12) !default;
+$alpha-red-24: rgba($red-50, 0.24) !default;
+$alpha-red-32: rgba($red-50, 0.32) !default;
+$alpha-red-60: rgba($red-50, 0.60) !default;
+$alpha-red-80: rgba($red-50, 0.80) !default;
+$alpha-red-96: rgba($red-50, 0.96) !default;
+
+// Pink alpha
+$alpha-pink-8: rgba($pink-50, 0.08) !default;
+$alpha-pink-12: rgba($pink-50, 0.12) !default;
+$alpha-pink-24: rgba($pink-50, 0.24) !default;
+$alpha-pink-32: rgba($pink-50, 0.32) !default;
+$alpha-pink-60: rgba($pink-50, 0.60) !default;
+$alpha-pink-80: rgba($pink-50, 0.80) !default;
+$alpha-pink-96: rgba($pink-50, 0.96) !default;
+
+// Violet alpha
+$alpha-violet-8: rgba($violet-50, 0.08) !default;
+$alpha-violet-12: rgba($violet-50, 0.12) !default;
+$alpha-violet-24: rgba($violet-50, 0.24) !default;
+$alpha-violet-32: rgba($violet-50, 0.32) !default;
+$alpha-violet-60: rgba($violet-50, 0.60) !default;
+$alpha-violet-80: rgba($violet-50, 0.80) !default;
+$alpha-violet-96: rgba($violet-50, 0.96) !default;
+
+// Legacy alpha aliases (하위 호환)
+$alpha-dark-96: $alpha-black-96 !default;
+$alpha-dark-80: $alpha-black-80 !default;
+$alpha-dark-60: $alpha-black-60 !default;
+$alpha-dark-40: rgba($neutral-100, 0.40) !default;
+$alpha-dark-24: $alpha-black-24 !default;
+$alpha-dark-12: $alpha-black-12 !default;
+$alpha-dark-8: $alpha-black-8 !default;
+$alpha-light-96: $alpha-white-96 !default;
+$alpha-light-80: $alpha-white-80 !default;
+$alpha-light-60: $alpha-white-60 !default;
+$alpha-light-40: rgba($neutral-0, 0.40) !default;
+$alpha-light-24: $alpha-white-24 !default;
+$alpha-light-12: $alpha-white-12 !default;
+$alpha-light-8: $alpha-white-8 !default;
+$alpha-brand-96: $alpha-lightblue-96 !default;
+$alpha-brand-80: $alpha-lightblue-80 !default;
+$alpha-brand-60: $alpha-lightblue-60 !default;
+$alpha-brand-40: rgba($lightblue-50, 0.40) !default;
+$alpha-brand-24: $alpha-lightblue-24 !default;
+$alpha-brand-12: $alpha-lightblue-12 !default;
+$alpha-brand-8: $alpha-lightblue-8 !default;
+
+// ============================================
+// SCALE COLORS (Semantic Scale from Figma)
+// ============================================
+// Neutral scale
+$scale-neutral-white: $neutral-0 !default;
+$scale-neutral-lightest: $neutral-10 !default;
+$scale-neutral-lighter: $neutral-20 !default;
+$scale-neutral-light: $neutral-30 !default;
+$scale-neutral-default: $neutral-50 !default;
+$scale-neutral-dark: $neutral-60 !default;
+$scale-neutral-darker: $neutral-80 !default;
+$scale-neutral-darkest: $neutral-100 !default;
+
+// Brand scale (lightblue)
+$scale-brand-lightest: $lightblue-5 !default;
+$scale-brand-lighter: $lightblue-10 !default;
+$scale-brand-light: $lightblue-30 !default;
+$scale-brand-default: $lightblue-50 !default;
+$scale-brand-dark: $lightblue-70 !default;
+$scale-brand-darker: $lightblue-80 !default;
+$scale-brand-darkest: $lightblue-90 !default;
+
+// Accent scale (blue)
+$scale-accent-lightest: $blue-10 !default;
+$scale-accent-lighter: $blue-20 !default;
+$scale-accent-light: $blue-30 !default;
+$scale-accent-default: $blue-50 !default;
+$scale-accent-dark: $blue-70 !default;
+$scale-accent-darker: $blue-80 !default;
+$scale-accent-darkest: $blue-90 !default;
+
+// Positive scale (green)
+$scale-positive-lightest: $green-5 !default;
+$scale-positive-lighter: $green-10 !default;
+$scale-positive-light: $green-30 !default;
+$scale-positive-default: $green-50 !default;
+$scale-positive-dark: $green-60 !default;
+$scale-positive-darker: $green-70 !default;
+$scale-positive-darkest: $green-90 !default;
+
+// Caution scale (yellow)
+$scale-caution-lightest: $yellow-5 !default;
+$scale-caution-lighter: $yellow-20 !default;
+$scale-caution-light: $yellow-30 !default;
+$scale-caution-default: $yellow-50 !default;
+$scale-caution-dark: $yellow-60 !default;
+$scale-caution-darker: $yellow-70 !default;
+$scale-caution-darkest: $yellow-90 !default;
+
+// Negative scale (red)
+$scale-negative-lightest: $red-5 !default;
+$scale-negative-lighter: $red-10 !default;
+$scale-negative-light: $red-30 !default;
+$scale-negative-default: $red-50 !default;
+$scale-negative-dark: $red-70 !default;
+$scale-negative-darker: $red-80 !default;
+$scale-negative-darkest: $red-90 !default;
+
+// ============================================
+// SEMANTIC TOKENS - Background (from Figma)
+// ============================================
+$bg-default: $scale-neutral-white !default;
+$bg-neutral: $scale-neutral-lightest !default;
+$bg-neutral-dark: $scale-neutral-lighter !default;
+$bg-neutral-darker: $scale-neutral-default !default;
+$bg-invert: $scale-neutral-darkest !default;
+$bg-disabled: $alpha-gray-24 !default;
+$bg-skeleton: $scale-neutral-lighter !default;
+$bg-scrollbar: $scale-neutral-lighter !default;
+$bg-dim: $alpha-black-60 !default;
+$bg-overlay: $alpha-white-80 !default;
+$bg-toast: $alpha-black-80 !default;
+
+$bg-brand: $scale-brand-default !default;
+$bg-brand-light: $scale-brand-lightest !default;
+$bg-brand-dark: $scale-brand-dark !default;
+
+$bg-accent: $scale-accent-default !default;
+$bg-accent-light: $scale-accent-lightest !default;
+$bg-accent-dark: $scale-accent-darker !default;
+
+$bg-positive: $scale-positive-default !default;
+$bg-positive-light: $scale-positive-lightest !default;
+$bg-positive-dark: $scale-positive-darker !default;
+
+$bg-caution: $scale-caution-default !default;
+$bg-caution-light: $scale-caution-lightest !default;
+$bg-caution-dark: $scale-caution-darker !default;
+
+$bg-negative: $scale-negative-default !default;
+$bg-negative-light: $scale-negative-lightest !default;
+$bg-negative-dark: $scale-negative-dark !default;
+
+// ============================================
+// SEMANTIC TOKENS - Text (from Figma)
+// ============================================
+$text-primary: $scale-neutral-darkest !default;
+$text-secondary: $scale-neutral-darker !default;
+$text-tertiary: $scale-neutral-dark !default;
+$text-lowest: $scale-neutral-default !default;
+$text-disabled: $alpha-black-24 !default;
+$text-invert: $scale-neutral-white !default;
+
+$text-brand: $scale-brand-default !default;
+$text-brand-light: $scale-brand-light !default;
+$text-brand-dark: $scale-brand-darkest !default;
+
+$text-accent: $scale-accent-default !default;
+$text-accent-light: $scale-accent-lighter !default;
+$text-accent-dark: $scale-accent-darkest !default;
+
+$text-positive: $scale-positive-default !default;
+$text-positive-light: $scale-positive-light !default;
+$text-positive-dark: $scale-positive-darker !default;
+
+$text-caution: $scale-caution-default !default;
+$text-caution-light: $scale-caution-light !default;
+$text-caution-dark: $scale-caution-darker !default;
+
+$text-negative: $scale-negative-default !default;
+$text-negative-light: $scale-negative-light !default;
+$text-negative-dark: $scale-negative-darker !default;
+
+$text-link: $violet-50 !default;
+$text-link-sub: $neutral-50 !default;
+$text-error: $red-50 !default;
+$text-point: $red-50 !default;
+
+// ============================================
+// SEMANTIC TOKENS - Border (from Figma)
+// ============================================
+$border-default: $scale-neutral-light !default;
+$border-light: $scale-neutral-lighter !default;
+$border-dark: $scale-neutral-default !default;
+$border-darker: $scale-neutral-dark !default;
+$border-black: $scale-neutral-darkest !default;
+$border-invert: $scale-neutral-white !default;
+$border-disabled: $alpha-black-24 !default;
+
+$border-brand: $scale-brand-default !default;
+$border-brand-light: $scale-brand-light !default;
+$border-brand-dark: $scale-brand-darker !default;
+
+$border-accent: $scale-accent-default !default;
+$border-accent-light: $scale-accent-light !default;
+$border-accent-dark: $scale-accent-darker !default;
+
+$border-positive: $scale-positive-default !default;
+$border-positive-light: $scale-positive-light !default;
+$border-positive-dark: $scale-positive-darker !default;
+
+$border-caution: $scale-caution-default !default;
+$border-caution-light: $scale-caution-lighter !default;
+$border-caution-dark: $scale-caution-darker !default;
+
+$border-negative: $scale-negative-default !default;
+$border-negative-light: $scale-negative-light !default;
+$border-negative-dark: $scale-negative-darker !default;
+
+// ============================================
+// SEMANTIC TOKENS - Icon (from Figma)
+// ============================================
+$icon-primary: $scale-neutral-darkest !default;
+$icon-secondary: $scale-neutral-darker !default;
+$icon-tertiary: $scale-neutral-dark !default;
+$icon-lowest: $scale-neutral-default !default;
+$icon-disabled: $alpha-black-24 !default;
+$icon-invert: $scale-neutral-white !default;
+
+$icon-brand: $scale-brand-default !default;
+$icon-brand-light: $scale-brand-light !default;
+$icon-brand-dark: $scale-brand-darkest !default;
+
+$icon-accent: $scale-accent-default !default;
+$icon-accent-light: $scale-accent-lighter !default;
+$icon-accent-dark: $scale-accent-darkest !default;
+
+$icon-positive: $scale-positive-default !default;
+$icon-positive-light: $scale-positive-light !default;
+$icon-positive-dark: $scale-positive-darker !default;
+
+$icon-caution: $scale-caution-default !default;
+$icon-caution-light: $scale-caution-light !default;
+$icon-caution-dark: $scale-caution-darker !default;
+
+$icon-negative: $scale-negative-default !default;
+$icon-negative-light: $scale-negative-light !default;
+$icon-negative-dark: $scale-negative-darker !default;
+
+$icon-link: $violet-50 !default;
+$icon-link-sub: $neutral-50 !default;
+
+// ============================================
+// STATIC COLORS (from Figma)
+// ============================================
+$static-blue: $blue-50 !default;
+$static-lightblue: $lightblue-50 !default;
+$static-green: $green-50 !default;
+$static-yellow: $yellow-50 !default;
+$static-orange: $orange-50 !default;
+$static-red: $red-50 !default;
+$static-pink: $pink-50 !default;
+$static-violet: $violet-50 !default;
+$static-gray: $neutral-50 !default;
+
+// ============================================
+// LEGACY TOKENS (하위 호환)
+// ============================================
+$border: $border-default !default;
+$primary: $neutral-100 !default;
+$secondary: $neutral-80 !default;
+$tertiary: $neutral-60 !default;
+$lowest: $neutral-50 !default;
+$disabled: $alpha-black-12 !default;
+$invert: $neutral-0 !default;
+$default: $neutral-10 !default;
+$brand: $lightblue-50 !default;
+$brand-default: $lightblue-50 !default;
+$brand-light: $lightblue-5 !default;
+$brand-dark: $lightblue-70 !default;
+$brand-point: $red-50 !default;
+$point: $red-50 !default;
+$dimmed: $alpha-black-60 !default;
+$overlay: $alpha-white-80 !default;
+
+// ============================================
+// COLOR MAPS (for CSS Custom Properties)
+// ============================================
+// Core palette maps
+$core-neutral-colors: (
+  'neutral-0': $neutral-0,
+  'neutral-5': $neutral-5,
+  'neutral-10': $neutral-10,
+  'neutral-20': $neutral-20,
+  'neutral-30': $neutral-30,
+  'neutral-40': $neutral-40,
+  'neutral-50': $neutral-50,
+  'neutral-60': $neutral-60,
+  'neutral-70': $neutral-70,
+  'neutral-80': $neutral-80,
+  'neutral-90': $neutral-90,
+  'neutral-100': $neutral-100,
+) !default;
+
+$core-blue-colors: (
+  'blue-5': $blue-5,
+  'blue-10': $blue-10,
+  'blue-20': $blue-20,
+  'blue-30': $blue-30,
+  'blue-40': $blue-40,
+  'blue-50': $blue-50,
+  'blue-60': $blue-60,
+  'blue-70': $blue-70,
+  'blue-80': $blue-80,
+  'blue-90': $blue-90,
+) !default;
+
+$core-lightblue-colors: (
+  'lightblue-5': $lightblue-5,
+  'lightblue-10': $lightblue-10,
+  'lightblue-20': $lightblue-20,
+  'lightblue-30': $lightblue-30,
+  'lightblue-40': $lightblue-40,
+  'lightblue-50': $lightblue-50,
+  'lightblue-60': $lightblue-60,
+  'lightblue-70': $lightblue-70,
+  'lightblue-80': $lightblue-80,
+  'lightblue-90': $lightblue-90,
+) !default;
+
+$core-green-colors: (
+  'green-5': $green-5,
+  'green-10': $green-10,
+  'green-20': $green-20,
+  'green-30': $green-30,
+  'green-40': $green-40,
+  'green-50': $green-50,
+  'green-60': $green-60,
+  'green-70': $green-70,
+  'green-80': $green-80,
+  'green-90': $green-90,
+) !default;
+
+$core-yellow-colors: (
+  'yellow-5': $yellow-5,
+  'yellow-10': $yellow-10,
+  'yellow-20': $yellow-20,
+  'yellow-30': $yellow-30,
+  'yellow-40': $yellow-40,
+  'yellow-50': $yellow-50,
+  'yellow-60': $yellow-60,
+  'yellow-70': $yellow-70,
+  'yellow-80': $yellow-80,
+  'yellow-90': $yellow-90,
+) !default;
+
+$core-orange-colors: (
+  'orange-5': $orange-5,
+  'orange-10': $orange-10,
+  'orange-20': $orange-20,
+  'orange-30': $orange-30,
+  'orange-40': $orange-40,
+  'orange-50': $orange-50,
+  'orange-60': $orange-60,
+  'orange-70': $orange-70,
+  'orange-80': $orange-80,
+  'orange-90': $orange-90,
+) !default;
+
+$core-red-colors: (
+  'red-5': $red-5,
+  'red-10': $red-10,
+  'red-20': $red-20,
+  'red-30': $red-30,
+  'red-40': $red-40,
+  'red-50': $red-50,
+  'red-60': $red-60,
+  'red-70': $red-70,
+  'red-80': $red-80,
+  'red-90': $red-90,
+) !default;
+
+$core-pink-colors: (
+  'pink-5': $pink-5,
+  'pink-10': $pink-10,
+  'pink-20': $pink-20,
+  'pink-30': $pink-30,
+  'pink-40': $pink-40,
+  'pink-50': $pink-50,
+  'pink-60': $pink-60,
+  'pink-70': $pink-70,
+  'pink-80': $pink-80,
+  'pink-90': $pink-90,
+) !default;
+
+$core-violet-colors: (
+  'violet-5': $violet-5,
+  'violet-10': $violet-10,
+  'violet-20': $violet-20,
+  'violet-30': $violet-30,
+  'violet-40': $violet-40,
+  'violet-50': $violet-50,
+  'violet-60': $violet-60,
+  'violet-70': $violet-70,
+  'violet-80': $violet-80,
+  'violet-90': $violet-90,
+) !default;
+
+// Semantic token maps
+$token-bg-colors: (
+  'bg-default': $bg-default,
+  'bg-neutral': $bg-neutral,
+  'bg-neutral-dark': $bg-neutral-dark,
+  'bg-neutral-darker': $bg-neutral-darker,
+  'bg-invert': $bg-invert,
+  'bg-disabled': $bg-disabled,
+  'bg-skeleton': $bg-skeleton,
+  'bg-dim': $bg-dim,
+  'bg-overlay': $bg-overlay,
+  'bg-toast': $bg-toast,
+  'bg-brand': $bg-brand,
+  'bg-brand-light': $bg-brand-light,
+  'bg-brand-dark': $bg-brand-dark,
+  'bg-accent': $bg-accent,
+  'bg-accent-light': $bg-accent-light,
+  'bg-accent-dark': $bg-accent-dark,
+  'bg-positive': $bg-positive,
+  'bg-positive-light': $bg-positive-light,
+  'bg-positive-dark': $bg-positive-dark,
+  'bg-caution': $bg-caution,
+  'bg-caution-light': $bg-caution-light,
+  'bg-caution-dark': $bg-caution-dark,
+  'bg-negative': $bg-negative,
+  'bg-negative-light': $bg-negative-light,
+  'bg-negative-dark': $bg-negative-dark,
+) !default;
+
+$token-text-colors: (
+  'text-primary': $text-primary,
+  'text-secondary': $text-secondary,
+  'text-tertiary': $text-tertiary,
+  'text-lowest': $text-lowest,
+  'text-disabled': $text-disabled,
+  'text-invert': $text-invert,
+  'text-brand': $text-brand,
+  'text-brand-light': $text-brand-light,
+  'text-brand-dark': $text-brand-dark,
+  'text-accent': $text-accent,
+  'text-accent-light': $text-accent-light,
+  'text-accent-dark': $text-accent-dark,
+  'text-positive': $text-positive,
+  'text-positive-light': $text-positive-light,
+  'text-positive-dark': $text-positive-dark,
+  'text-caution': $text-caution,
+  'text-caution-light': $text-caution-light,
+  'text-caution-dark': $text-caution-dark,
+  'text-negative': $text-negative,
+  'text-negative-light': $text-negative-light,
+  'text-negative-dark': $text-negative-dark,
+  'text-link': $text-link,
+  'text-error': $text-error,
+) !default;
+
+$token-border-colors: (
+  'border-default': $border-default,
+  'border-light': $border-light,
+  'border-dark': $border-dark,
+  'border-darker': $border-darker,
+  'border-black': $border-black,
+  'border-invert': $border-invert,
+  'border-disabled': $border-disabled,
+  'border-brand': $border-brand,
+  'border-brand-light': $border-brand-light,
+  'border-brand-dark': $border-brand-dark,
+  'border-accent': $border-accent,
+  'border-positive': $border-positive,
+  'border-caution': $border-caution,
+  'border-negative': $border-negative,
+) !default;
+
+$token-icon-colors: (
+  'icon-primary': $icon-primary,
+  'icon-secondary': $icon-secondary,
+  'icon-tertiary': $icon-tertiary,
+  'icon-lowest': $icon-lowest,
+  'icon-disabled': $icon-disabled,
+  'icon-invert': $icon-invert,
+  'icon-brand': $icon-brand,
+  'icon-accent': $icon-accent,
+  'icon-positive': $icon-positive,
+  'icon-caution': $icon-caution,
+  'icon-negative': $icon-negative,
+) !default;
+
+// Legacy token map (하위 호환)
+$token-colors: (
+  'border': $border,
+  'primary': $primary,
+  'secondary': $secondary,
+  'tertiary': $tertiary,
+  'lowest': $lowest,
+  'disabled': $disabled,
+  'invert': $invert,
+  'default': $default,
+  'brand': $brand,
+  'brand-light': $brand-light,
+  'brand-dark': $brand-dark,
+  'point': $point,
+  'dimmed': $dimmed,
+  'overlay': $overlay,
+) !default;
+
+// ============================================
+// ICON / SLOT SIZES
+// ============================================
+$icon-xsmall: 16 !default;
+$icon-small: 24 !default;
+$icon-medium: 32 !default;
+$icon-large: 40 !default;
+$icon-xlarge: 48 !default;
+
+// ============================================
+// Z-INDEX
+// ============================================
+$index-header: 1000 !default;
+$index-cta: 1000 !default;
+$index-gnb: 1500 !default;
+$index-dimmed: 2000 !default;
+$index-modal: 3000 !default;
+
+// ============================================
+// COMPONENT TOKENS (from Figma)
+// ============================================
+// Button
+$button-radius: $radius-circle !default;
+$button-ghost-radius: 8 !default;
+$button-max-width: 400 !default;
+$button-group-max-width: 480 !default;
+
+// Button large
+$button-large-padding-hor: 32 !default;
+$button-large-padding-ver: 16 !default;
+$button-large-gap: 8 !default;
+
+// Button medium
+$button-medium-padding-hor: 24 !default;
+$button-medium-padding-ver: 12 !default;
+$button-medium-gap: 6 !default;
+
+// Button small
+$button-small-padding-hor: 20 !default;
+$button-small-padding-ver: 8 !default;
+$button-small-gap: 4 !default;
+
+// Button xsmall
+$button-xsmall-padding-hor: 14 !default;
+$button-xsmall-padding-ver: 6 !default;
+$button-xsmall-gap: 4 !default;
+
+// Button ghost
+$button-ghost-large-padding-hor: 16 !default;
+$button-ghost-large-padding-ver: 16 !default;
+$button-ghost-medium-padding-hor: 10 !default;
+$button-ghost-medium-padding-ver: 12 !default;
+$button-ghost-small-padding-hor: 8 !default;
+$button-ghost-small-padding-ver: 10 !default;
+$button-ghost-xsmall-padding-hor: 6 !default;
+$button-ghost-xsmall-padding-ver: 6 !default;
+
+// Icon button
+$button-ic-radius: $radius-circle !default;
+$button-ic-ghost-radius: 8 !default;
+$button-ic-large-padding: 16 !default;
+$button-ic-medium-padding: 12 !default;
+$button-ic-small-padding: 8 !default;
+$button-ic-ghost-large-padding: 8 !default;
+$button-ic-ghost-medium-padding: 4 !default;
+$button-ic-ghost-small-padding: 2 !default;

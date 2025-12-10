@@ -1,0 +1,229 @@
+@use "../abstracts/variables" as *;
+
+:root {
+  // ============================================
+  // CORE COLORS - Palette
+  // ============================================
+  // Neutral
+  @each $color, $value in $core-neutral-colors {
+    --#{$variable-prefix}#{$color}: #{$value};
+  }
+
+  // Blue
+  @each $color, $value in $core-blue-colors {
+    --#{$variable-prefix}#{$color}: #{$value};
+  }
+
+  // Lightblue (Brand)
+  @each $color, $value in $core-lightblue-colors {
+    --#{$variable-prefix}#{$color}: #{$value};
+  }
+
+  // Green
+  @each $color, $value in $core-green-colors {
+    --#{$variable-prefix}#{$color}: #{$value};
+  }
+
+  // Yellow
+  @each $color, $value in $core-yellow-colors {
+    --#{$variable-prefix}#{$color}: #{$value};
+  }
+
+  // Orange
+  @each $color, $value in $core-orange-colors {
+    --#{$variable-prefix}#{$color}: #{$value};
+  }
+
+  // Red
+  @each $color, $value in $core-red-colors {
+    --#{$variable-prefix}#{$color}: #{$value};
+  }
+
+  // Pink
+  @each $color, $value in $core-pink-colors {
+    --#{$variable-prefix}#{$color}: #{$value};
+  }
+
+  // Violet
+  @each $color, $value in $core-violet-colors {
+    --#{$variable-prefix}#{$color}: #{$value};
+  }
+
+  // ============================================
+  // SEMANTIC TOKENS
+  // ============================================
+  // Background
+  @each $color, $value in $token-bg-colors {
+    --#{$variable-prefix}#{$color}: #{$value};
+  }
+
+  // Text
+  @each $color, $value in $token-text-colors {
+    --#{$variable-prefix}#{$color}: #{$value};
+  }
+
+  // Border
+  @each $color, $value in $token-border-colors {
+    --#{$variable-prefix}#{$color}: #{$value};
+  }
+
+  // Icon
+  @each $color, $value in $token-icon-colors {
+    --#{$variable-prefix}#{$color}: #{$value};
+  }
+
+  // Legacy tokens (하위 호환)
+  @each $color, $value in $token-colors {
+    --#{$variable-prefix}#{$color}: #{$value};
+  }
+
+  // ============================================
+  // STATIC COLORS
+  // ============================================
+  --#{$variable-prefix}static-blue: #{$static-blue};
+  --#{$variable-prefix}static-lightblue: #{$static-lightblue};
+  --#{$variable-prefix}static-green: #{$static-green};
+  --#{$variable-prefix}static-yellow: #{$static-yellow};
+  --#{$variable-prefix}static-orange: #{$static-orange};
+  --#{$variable-prefix}static-red: #{$static-red};
+  --#{$variable-prefix}static-pink: #{$static-pink};
+  --#{$variable-prefix}static-violet: #{$static-violet};
+  --#{$variable-prefix}static-gray: #{$static-gray};
+
+  // ============================================
+  // FONT FAMILY
+  // ============================================
+  --#{$variable-prefix}font-brand: #{$font-family-brand};
+  --#{$variable-prefix}font-main: #{$font-family-main};
+  --#{$variable-prefix}font-point: #{$font-family-point};
+  --#{$variable-prefix}font-kids: #{$font-family-kids};
+  --#{$variable-prefix}font-ja: #{$font-family-ja};
+  --#{$variable-prefix}font-zh-tw: #{$font-family-zh-tw};
+  --#{$variable-prefix}font-zh-cn: #{$font-family-zh-cn};
+
+  // Legacy font aliases
+  --#{$variable-prefix}font-pretendard: #{$pretendard};
+  --#{$variable-prefix}font-pretendard-variable: #{$pretendard-variable};
+  --#{$variable-prefix}font-noto: #{$noto};
+  --#{$variable-prefix}font-roboto: #{$roboto};
+
+  // ============================================
+  // SPACING (PC values as default)
+  // ============================================
+  --#{$variable-prefix}spacing-1: #{$spacing-pc-1}px;
+  --#{$variable-prefix}spacing-2: #{$spacing-pc-2}px;
+  --#{$variable-prefix}spacing-3: #{$spacing-pc-3}px;
+  --#{$variable-prefix}spacing-4: #{$spacing-pc-4}px;
+  --#{$variable-prefix}spacing-5: #{$spacing-pc-5}px;
+  --#{$variable-prefix}spacing-6: #{$spacing-pc-6}px;
+  --#{$variable-prefix}spacing-7: #{$spacing-pc-7}px;
+  --#{$variable-prefix}spacing-8: #{$spacing-pc-8}px;
+  --#{$variable-prefix}spacing-9: #{$spacing-pc-9}px;
+  --#{$variable-prefix}spacing-10: #{$spacing-pc-10}px;
+  --#{$variable-prefix}spacing-11: #{$spacing-pc-11}px;
+  --#{$variable-prefix}spacing-12: #{$spacing-pc-12}px;
+  --#{$variable-prefix}spacing-13: #{$spacing-pc-13}px;
+  --#{$variable-prefix}spacing-14: #{$spacing-pc-14}px;
+  --#{$variable-prefix}spacing-15: #{$spacing-pc-15}px;
+
+  // ============================================
+  // RADIUS (PC values as default)
+  // ============================================
+  --#{$variable-prefix}radius-1: #{$radius-pc-1}px;
+  --#{$variable-prefix}radius-2: #{$radius-pc-2}px;
+  --#{$variable-prefix}radius-3: #{$radius-pc-3}px;
+  --#{$variable-prefix}radius-4: #{$radius-pc-4}px;
+  --#{$variable-prefix}radius-5: #{$radius-pc-5}px;
+  --#{$variable-prefix}radius-6: #{$radius-pc-6}px;
+  --#{$variable-prefix}radius-7: #{$radius-pc-7}px;
+  --#{$variable-prefix}radius-circle: #{$radius-circle}px;
+
+  // ============================================
+  // LAYOUT
+  // ============================================
+  --#{$variable-prefix}container-width: #{$container-width}px;
+  --#{$variable-prefix}container-width-narrow: #{$container-width-narrow}px;
+  --#{$variable-prefix}container-width-wide: #{$container-width-wide}px;
+  --#{$variable-prefix}layout-padding: #{$layout-padding-pc}px;
+
+  // ============================================
+  // Z-INDEX
+  // ============================================
+  --#{$variable-prefix}index-header: #{$index-header};
+  --#{$variable-prefix}index-cta: #{$index-cta};
+  --#{$variable-prefix}index-gnb: #{$index-gnb};
+  --#{$variable-prefix}index-dimmed: #{$index-dimmed};
+  --#{$variable-prefix}index-modal: #{$index-modal};
+}
+
+// ============================================
+// RESPONSIVE OVERRIDES (Tablet)
+// ============================================
+@media (max-width: #{$responsive-max-tablet}px) {
+  :root {
+    // Spacing
+    --#{$variable-prefix}spacing-1: #{$spacing-ta-1}px;
+    --#{$variable-prefix}spacing-2: #{$spacing-ta-2}px;
+    --#{$variable-prefix}spacing-3: #{$spacing-ta-3}px;
+    --#{$variable-prefix}spacing-4: #{$spacing-ta-4}px;
+    --#{$variable-prefix}spacing-5: #{$spacing-ta-5}px;
+    --#{$variable-prefix}spacing-6: #{$spacing-ta-6}px;
+    --#{$variable-prefix}spacing-7: #{$spacing-ta-7}px;
+    --#{$variable-prefix}spacing-8: #{$spacing-ta-8}px;
+    --#{$variable-prefix}spacing-9: #{$spacing-ta-9}px;
+    --#{$variable-prefix}spacing-10: #{$spacing-ta-10}px;
+    --#{$variable-prefix}spacing-11: #{$spacing-ta-11}px;
+    --#{$variable-prefix}spacing-12: #{$spacing-ta-12}px;
+    --#{$variable-prefix}spacing-13: #{$spacing-ta-13}px;
+    --#{$variable-prefix}spacing-14: #{$spacing-ta-14}px;
+    --#{$variable-prefix}spacing-15: #{$spacing-ta-15}px;
+
+    // Radius
+    --#{$variable-prefix}radius-1: #{$radius-ta-1}px;
+    --#{$variable-prefix}radius-2: #{$radius-ta-2}px;
+    --#{$variable-prefix}radius-3: #{$radius-ta-3}px;
+    --#{$variable-prefix}radius-4: #{$radius-ta-4}px;
+    --#{$variable-prefix}radius-5: #{$radius-ta-5}px;
+    --#{$variable-prefix}radius-6: #{$radius-ta-6}px;
+    --#{$variable-prefix}radius-7: #{$radius-ta-7}px;
+
+    // Layout
+    --#{$variable-prefix}layout-padding: #{$layout-padding-ta}px;
+  }
+}
+
+// ============================================
+// RESPONSIVE OVERRIDES (Mobile)
+// ============================================
+@media (max-width: #{$responsive-max-mobile}px) {
+  :root {
+    // Spacing
+    --#{$variable-prefix}spacing-1: #{$spacing-mo-1}px;
+    --#{$variable-prefix}spacing-2: #{$spacing-mo-2}px;
+    --#{$variable-prefix}spacing-3: #{$spacing-mo-3}px;
+    --#{$variable-prefix}spacing-4: #{$spacing-mo-4}px;
+    --#{$variable-prefix}spacing-5: #{$spacing-mo-5}px;
+    --#{$variable-prefix}spacing-6: #{$spacing-mo-6}px;
+    --#{$variable-prefix}spacing-7: #{$spacing-mo-7}px;
+    --#{$variable-prefix}spacing-8: #{$spacing-mo-8}px;
+    --#{$variable-prefix}spacing-9: #{$spacing-mo-9}px;
+    --#{$variable-prefix}spacing-10: #{$spacing-mo-10}px;
+    --#{$variable-prefix}spacing-11: #{$spacing-mo-11}px;
+    --#{$variable-prefix}spacing-12: #{$spacing-mo-12}px;
+    --#{$variable-prefix}spacing-13: #{$spacing-mo-13}px;
+    --#{$variable-prefix}spacing-14: #{$spacing-mo-14}px;
+    --#{$variable-prefix}spacing-15: #{$spacing-mo-15}px;
+
+    // Radius
+    --#{$variable-prefix}radius-1: #{$radius-mo-1}px;
+    --#{$variable-prefix}radius-2: #{$radius-mo-2}px;
+    --#{$variable-prefix}radius-3: #{$radius-mo-3}px;
+    --#{$variable-prefix}radius-4: #{$radius-mo-4}px;
+    --#{$variable-prefix}radius-5: #{$radius-mo-5}px;
+    --#{$variable-prefix}radius-6: #{$radius-mo-6}px;
+    --#{$variable-prefix}radius-7: #{$radius-mo-7}px;
+
+    // Layout
+    --#{$variable-prefix}layout-padding: #{$layout-padding-mo}px;
+  }
+}

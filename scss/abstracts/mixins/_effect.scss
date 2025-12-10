@@ -1,0 +1,37 @@
+@use "../variables" as *;
+@use "../functions" as *;
+
+/* Mixins - Effect (그림자 효과) */
+/*
+  $top: 0px;
+  $right: 8px;
+  $bottom:: 24px;
+  $left: 0px;
+  $color: rgba(11, 13, 17, 0.08);
+*/
+@mixin colors-effect($top, $right, $bottom, $left, $color) {
+  box-shadow: $top $right $bottom $left $color;
+}
+//@mixin effect-floating() {
+//  box-shadow: 0 px(8) px(16) 0 $alpha-dark-8;
+//
+//  @content;
+//}
+@mixin effect-bottom-sheet() {
+  box-shadow: 0 -#{px(8)} px(16) 0 $alpha-dark-8;
+}
+@mixin effect-modal() {
+  box-shadow: 0 px(8) px(24) 0 $alpha-dark-8;
+}
+@mixin effect-small() {
+  box-shadow: 0 px(8) px(16) 0 rgba(11, 13, 17, 0.08);
+}
+@mixin effect-big() {
+  box-shadow: px(8) px(12) px(32) 0 rgba(11, 13, 17, 0.10);
+}
+@mixin effect-floating() {
+  box-shadow: 0 px(12) px(18) 0 rgba(11, 13, 17, 0.12);
+}
+@mixin effect-top() {
+  box-shadow: 0 -#{px(8)} px(16) 0 rgba(11, 13, 17, 0.12);
+}

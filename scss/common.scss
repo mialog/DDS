@@ -1,0 +1,1564 @@
+@use "abstracts/variables" as *;
+@use "abstracts/functions" as *;
+@use "abstracts/mixins/effect" as *;
+@use "abstracts/mixins/respond" as *;
+@use "abstracts/mixins/templete" as *;
+@use "abstracts/mixins/utils" as *;
+
+@forward "base/root";
+@forward "base/fonts";
+@forward "base/normalize";
+@forward "style";
+
+// Common
+* {
+  margin: 0;
+  padding: 0;
+  font-family: $font-family-main, Avenir, Helvetica, Arial, sans-serif;
+  //font-family: $font-family-brand, Avenir, Helvetica, Arial, sans-serif;
+  font-weight: $font-weight-medium;
+  box-sizing: border-box;
+  word-break: keep-all;
+}
+html {
+  font-size: $font-base-rem;
+  color: $text-primary;
+}
+body,
+html {
+  width: 100%;
+  height: 100%;
+}
+body {
+  &:is(.popup) {
+    overflow: hidden;
+  }
+}
+p {
+  margin: 0;
+}
+ul,
+ol,
+li {
+  list-style: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+a {
+  color: initial;
+  text-decoration: none;
+  cursor: pointer;
+}
+em {
+  font-style: initial;
+  text-decoration: none;
+}
+input,
+select,
+textarea {
+  vertical-align: middle;
+  resize: none;
+  outline: none;
+}
+button {
+  border: 0 none;
+  cursor: pointer;
+  outline: 0;
+  background: none;
+}
+
+.disabled,
+[disabled] {
+  opacity: 1 !important;
+}
+
+/* input 기본 스타일 초기화 */
+input {
+  appearance: none;
+  border: none;
+}
+
+/* input type number 에서 화살표 제거 */
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  appearance: none;
+}
+
+/* selectbox 스타일 초기화 */
+select {
+  appearance: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+img {
+  vertical-align: middle;
+  // 이미지 drag 방지
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  user-drag: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: $font-weight-bold;
+}
+
+.blind {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+}
+.text-img {
+  @include text-img;
+}
+
+.only {
+  &-desktop {
+    display: none !important;
+    @include respondToMin(tablet) {
+      display: none !important;
+    }
+    @include respondToMin(desktop) {
+      display: block !important;
+    }
+  }
+  &-tablet {
+    display: none !important;;
+    @include respondToMin(tablet) {
+      display: block !important;;
+    }
+    @include respondToMin(pc) {
+      display: none !important;;
+    }
+  }
+  &-mobile {
+    display: block !important;
+    @include respondToMin(tablet) {
+      display: none !important;
+    }
+    @include respondToMin(desktop) {
+      display: none !important;
+    }
+  }
+  &-mobile-tablet {
+    display: block !important;
+    @include respondToMin(tablet) {
+      display: block !important;
+    }
+    @include respondToMin(desktop) {
+      display: none !important;
+    }
+  }
+  &-tablet-desktop {
+    display: none !important;
+    @include respondToMin(tablet) {
+      display: block !important;
+    }
+    @include respondToMin(desktop) {
+      display: block !important;
+    }
+  }
+}
+
+// Font
+.font {
+  // display
+  &-display {
+    // large
+    &--large {
+      @include font-display(large);
+    }
+    // medium
+    &--medium {
+      @include font-display;
+    }
+    // small
+    &--small {
+      @include font-display(small);
+    }
+  }
+  // header
+  &-header {
+    &--large {
+      @include font-header(large);
+    }
+    &--medium {
+      @include font-header;
+    }
+    &--small {
+      @include font-header(small);
+    }
+    &--xsmall {
+      @include font-header(xsmall);
+    }
+  }
+  // body
+  &-body {
+    &--large {
+      @include font-body(large);
+    }
+    &--medium {
+      @include font-body;
+    }
+    &--small {
+      @include font-body(small);
+    }
+    &--xsmall {
+      @include font-body(xsmall);
+    }
+  }
+  // action
+  &-action {
+    &--large {
+      @include font-action(large);
+    }
+    &--medium {
+      @include font-action;
+    }
+    &--small {
+      @include font-action(small);
+    }
+  }
+  // weight
+  &-weight {
+    &--black {
+      font-weight: $font-weight-black;
+    }
+    &--bold {
+      font-weight: $font-weight-bold;
+    }
+    &--default {
+      font-weight: $font-weight-medium;
+    }
+    &--light {
+      font-weight: $font-weight-light;
+    }
+  }
+}
+
+.background {
+  &-border {
+    background: $border !important;
+  }
+  &-primary {
+    background: $primary !important;
+  }
+  &-secondary {
+    background: $secondary !important;
+  }
+  &-tertiary {
+    background: $tertiary !important;
+  }
+  &-lowest {
+    background: $lowest !important;
+  }
+  &-disabled {
+    background: $disabled !important;
+  }
+  &-invert {
+    background: $invert !important;
+  }
+  &-default {
+    background: $default !important;
+  }
+  &-brand {
+    background: $brand !important;
+    &-light {
+      background: $brand-light !important;
+    }
+    &-dark {
+      background: $brand-dark !important;
+    }
+  }
+  &-point {
+    background: $point !important;
+  }
+  &-dimmed {
+    background: $dimmed !important;
+  }
+  &-overlay {
+    background: $overlay !important;
+  }
+}
+.font {
+  &-primary {
+    color: $text-primary !important;
+  }
+  &-secondary {
+    color: $text-secondary !important;
+  }
+  &-tertiary {
+    color: $text-tertiary !important;
+  }
+  &-lowest {
+    color: $text-lowest !important;
+  }
+  &-disabled {
+    color: $text-disabled !important;
+  }
+  &-invert {
+    color: $text-invert !important;
+  }
+  &-brand {
+    color: $text-brand !important;
+    &-light {
+      color: $text-brand-light !important;
+    }
+    &-dark {
+      color: $text-brand-dark !important;
+    }
+  }
+  &-point {
+    color: $text-point !important;
+  }
+  &-error {
+    color: $text-error !important;
+  }
+}
+
+.align {
+  &-left {
+    text-align: left !important;
+  }
+  &-center {
+    text-align: center !important;
+  }
+  &-right {
+    text-align: right !important;
+  }
+}
+
+// Number
+.template {
+  // radius
+  &-radius {
+    &--1 {
+      @include template-radius(1);
+    }
+    &--2 {
+      @include template-radius(2);
+    }
+    &--3 {
+      @include template-radius(3);
+    }
+    &--4 {
+      @include template-radius(4);
+    }
+    &--5 {
+      @include template-radius(5);
+    }
+    &--999 {
+      @include template-radius(999);
+    }
+  }
+  // section
+  &-section {
+
+  }
+}
+
+.ico-btn {
+  display: block;
+  padding: rem($spacing-4);
+  // 공통
+  &__box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &__effect {
+    @include template-radius(999);
+    &:hover {
+      background: $alpha-dark-8;
+    }
+    &:focus {
+      background: $alpha-dark-12;
+    }
+    &:active,
+    &.active {
+      background: $alpha-dark-24;
+    }
+    &:disabled,
+    &.disabled {
+      opacity: 0.24;
+    }
+  }
+
+  // 네비게이션
+  &__nav {
+    // 메뉴
+    &-menu {
+      &::before {
+        background: {
+          image: url($url_img + 'common/ico-nav-menu.svg');
+          size: contain;
+          repeat: no-repeat;
+        }
+      }
+    }
+    // 닫기
+    &-close {
+      &::before {
+        background: {
+          image: url($url_img + 'common/ico-nav-close.svg');
+          size: contain;
+          repeat: no-repeat;
+        }
+      }
+    }
+  }
+}
+
+// Header(mixin)
+@mixin header-list-menu-effect() {
+  &:hover {
+    color: $text-brand;
+  }
+  &:focus {
+    color: $text-brand;
+    font-weight: $font-weight-bold;
+  }
+  &:active,
+  &.active {
+    background: $alpha-brand-12;
+    color: $text-brand;
+    font-weight: $font-weight-bold;
+  }
+  &:disabled,
+  &.disabled {
+    color: $text-disabled;
+    cursor: default;
+  }
+}
+// Header
+.header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+  padding: rem($spacing-4) rem($spacing-24);
+  z-index: $index-header;
+  @include respondToMin(tablet) {
+    padding: rem($spacing-6) rem($spacing-32);
+  }
+  @include respondToMin(desktop) {
+    padding: rem($spacing-8) rem($spacing-48);
+  }
+  &-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @include respondToMin(desktop) {
+      max-width: rem(1400);
+      margin: 0 auto;
+    }
+  }
+  &-logo {
+    display: flex;
+    align-items: center;
+    padding: rem(5);
+    //width: px(139);
+    //height: px(40);
+    //&::before {
+    //  @include virtual(px(99), px(28));
+    //  background: {
+    //    image: url($url_img + 'page/ico-logo.svg');
+    //    size: px(99) px(28);
+    //    repeat: no-repeat;
+    //  }
+    //}
+    @include respondToMin(desktop) {
+      padding: rem(3);
+    }
+  }
+  &-menu {
+    // mobile
+    &__btn {
+      .ico-btn {
+        &__nav-menu {
+          &::before {
+            @include virtual(px(32), px(32));
+          }
+        }
+      }
+    }
+    // pc
+    &__list {
+      & > ul {
+        display: flex;
+        align-items: center;
+        gap: rem($spacing-48);
+        & > li {
+          .list-menu {
+            padding: rem($spacing-4) rem($spacing-8);
+            border-radius: px($radius-8);
+            color: $text-secondary;
+            @include font-action(small);
+            @include header-list-menu-effect;
+          }
+        }
+      }
+    }
+  }
+
+  &:is(.scroll) {
+    background: $alpha-light-80;
+    backdrop-filter: blur(px(12));
+  }
+}
+// MobileMenu
+.mobile-menu {
+  display: none;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(180deg, #FFF 40%, rgba(255, 255, 255, 0.00) 100%);
+  backdrop-filter: blur(px(8));
+  overflow-x: hidden;
+  overflow-y: auto;
+  z-index: $index-gnb;
+  @include respondToMin(desktop) {
+    display: none !important;
+  }
+  &:is(.show) {
+    display: block;
+  }
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: rem($spacing-4) rem($spacing-24);
+    @include respondToMin(tablet) {
+      padding: rem($spacing-6) rem($spacing-32);
+    }
+    .header {
+      &-button {
+        .ico-btn {
+          &__nav-close {
+            &::before {
+              @include virtual(px(32), px(32));
+            }
+          }
+        }
+      }
+    }
+  }
+  &__list {
+    position: relative;
+    padding: rem($spacing-36) rem($spacing-48) rem($spacing-16);
+    @include respondToMin(tablet) {
+      padding-top: rem($spacing-52);
+    }
+    & > ul {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: rem($spacing-26);
+      @include respondToMin(tablet) {
+        gap: rem($spacing-32);
+      }
+      & > li {
+        .list-menu {
+          display: inline-block;
+          min-width: rem(120);
+          padding: rem($spacing-8) rem($spacing-12);
+          border-radius: px($radius-8);
+          color: $text-secondary;
+          text-align: center;
+          @include font-action(large);
+          @include header-list-menu-effect;
+        }
+      }
+    }
+  }
+}
+
+// Footer
+.footer {
+  position: relative;
+  background: $invert;
+  border-top: 1px solid $neutral-20;
+  padding: rem($spacing-40) rem($spacing-20) rem(120);
+  font-weight: 600;
+  * { font-weight: inherit}
+  &-inner {
+    display: flex;
+    flex-direction: column;
+    gap: rem($spacing-40);
+    position: relative;
+    overflow: hidden;
+    @include respondToMin(desktop) {
+      gap: 0;
+      max-width: rem(1400);
+      margin: 0 auto;
+      padding-right: rem(264);
+    }
+  }
+  .menu {
+    &-list {
+      display: flex;
+      align-items: center;
+      gap: px($spacing-20);
+      a {
+        @include text-label;
+        color: $grayscale-60;
+        font-weight: inherit;
+        @include respondToMin(desktop) {
+          @include text-label(large);
+        }
+      }
+      b, strong {
+        @include text-label(large) {
+          color: $grayscale-90;
+          font-weight: $font-weight-black;
+        }
+      }
+    }
+  }
+  .customer-center {
+    @include respondToMin(desktop) {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: rem(264);
+    }
+    &__title {
+      @include text-body;
+      color: $text-secondary;
+    }
+    &__tel {
+      margin-top: rem($spacing-4);
+      @include text-title(small);
+      color: $text-secondary;
+      font-weight: $font-weight-black;
+      @include respondToMin(desktop) {
+        margin-top: 0;
+        @include text-title;
+      }
+    }
+    &__operating-hours {
+      @include text-body(small);
+      color: $text-tertiary;
+    }
+  }
+  .company-info {
+    @include respondToMin(desktop) {
+      display: flex;
+      align-items: center;
+      margin-top: rem($spacing-48);
+    }
+    &__logo {
+      width: px(120);
+      height: px(44);
+      padding: rem(2);
+      background: {
+        image: url($url_img + 'common/ico-daekyo.svg');
+        size: px(120) px(44);
+        repeat: no-repeat;
+      }
+      @include respondToMin(desktop) {
+        flex-shrink: 0;
+        width: px(152);
+        height: px(56);
+        background: {
+          size: px(152) px(56);
+          repeat: no-repeat;
+        }
+      }
+    }
+    &__content {
+      margin-top: rem($spacing-20);
+      @include respondToMin(desktop) {
+        margin-top: 0;
+        margin-left: rem($spacing-24);
+      }
+      .info-name {
+        display: flex;
+        align-items: center;
+        @include text-label(small);
+        color: $text-primary;
+        cursor: pointer;
+        @include respondToMin(desktop) {
+          @include text-label;
+          cursor: initial;
+        }
+        &__title {
+          font-weight: $font-weight-black;
+        }
+        svg {
+          transform: rotate(180deg);
+          @include respondToMin(desktop) {
+            display: none;
+          }
+        }
+        &:is(.active) {
+          svg {
+            transform: rotate(0);
+          }
+        }
+      }
+      .info-address {
+        display: none;
+        @include text-label(small);
+        color: $text-tertiary;
+        @include respondToMin(desktop) {
+          @include text-label;
+          display: block;
+        }
+        &__info {
+          margin-top: rem(2);
+          &:first-child {
+            margin-top: rem($spacing-4);
+            @include respondToMin(desktop) {
+              margin-top: rem($spacing-8);
+            }
+          }
+        }
+      }
+    }
+  }
+  .copyright {
+    @include text-label(small);
+    font-weight: $font-weight-light;
+    color: $text-tertiary;
+    @include respondToMin(desktop) {
+      margin-top: rem($spacing-40);
+    }
+  }
+}
+
+// Page
+// Parent
+#wrap {
+  .container {
+    //max-width: px(1920);
+    //margin: 0 auto;
+  }
+  .content {
+
+  }
+}
+
+.section {
+  position: relative;
+  // section common
+  img {
+    width: 100%;
+  }
+  &-group {
+    padding-top: rem($spacing-32);
+    @include respondToMin(tablet) {
+      padding-top: 0;
+    }
+  }
+  &-padding {
+    padding: rem($spacing-32) rem($spacing-24);
+    @include respondToMin(tablet) {
+      padding: rem($spacing-60) rem($spacing-32);
+    }
+    @include respondToMin(desktop) {
+      padding: rem($spacing-80) rem($spacing-48);
+    }
+  }
+  &-inner {
+    @include respondToMin(desktop) {
+      max-width: rem($container-width);
+      margin: 0 auto;
+    }
+    &:is(.type2) {
+      @include respondToMin(desktop) {
+        max-width: rem(880);
+      }
+    }
+  }
+  .section-header {
+    padding: rem($spacing-32) 0;
+    text-align: center;
+    @include respondToMin(tablet) {
+      padding: rem($spacing-38) 0;
+    }
+    @include respondToMin(desktop) {
+      padding: rem($spacing-48) 0;
+    }
+    &__title {
+      @include font-header(large) {
+        font-weight: $font-weight-bold;
+      }
+      & * {
+        font-weight: inherit;
+      }
+    }
+    &__sub {
+      padding-bottom: rem($spacing-6);
+      @include font-header(xsmall) {
+        font-weight: $font-weight-bold;
+        color: $text-brand-dark;
+      }
+      & * {
+        font-weight: inherit;
+      }
+      @include respondToMin(tablet) {
+        padding-bottom: rem($spacing-8);
+      }
+      @include respondToMin(desktop) {
+        padding-top: rem($spacing-12);
+      }
+    }
+    &__desc {
+      padding-top: rem($spacing-16);
+      @include font-body {
+        color: $text-secondary;
+      }
+      @include respondToMin(tablet) {
+        padding-top: rem($spacing-20);
+      }
+      @include respondToMin(desktop) {
+        padding-top: rem($spacing-24);
+      }
+    }
+    &__button {
+      margin-top: rem($spacing-26);
+      text-align: center;
+      @include respondToMin(tablet) {
+        margin-top: rem($spacing-32);
+      }
+      @include respondToMin(desktop) {
+        margin-top: rem($spacing-40);
+      }
+      .btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: px(120);
+        margin: 0 auto;
+        padding: rem($spacing-8) rem($spacing-16);
+        text-align: center;
+        border-radius: px(8);
+        background: $invert;
+        @include respondToMin(tablet) {
+          width: px(140);
+          padding: rem(10) rem(20);
+        }
+        @include respondToMin(desktop) {
+          width: px(180);
+          padding: rem($spacing-12) rem($spacing-24);
+        }
+        * {
+          @include font-action(small) {
+            color: $text-invert;
+          }
+        }
+      }
+    }
+  }
+  .section-img {
+    overflow: hidden;
+    img {
+      height: px(360);
+      object-fit: cover;
+      @include respondToMin(tablet) {
+        height: px(396);
+        object-fit: contain;
+      }
+      @include respondToMin(desktop) {
+        height: px(720);
+        object-fit: cover;
+      }
+    }
+    &__radius {
+      background: $invert;
+      border: 1px solid $border;
+      @include template-radius(1);
+    }
+  }
+  .slogan {
+    &-inner {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: rem($spacing-12);
+      padding: rem($spacing-8) 0 rem($spacing-12);
+      color: $text-invert;
+      @include respondToMin(tablet) {
+        gap: rem($spacing-16);
+      }
+      @include respondToMin(desktop) {
+        gap: rem($spacing-20);
+        padding: rem($spacing-16) 0 rem($spacing-20);
+      }
+      &.align {
+        &-left {
+          justify-content: flex-start;
+          align-items: flex-start;
+        }
+        &-center {
+          justify-content: center;
+          align-items: center;
+        }
+        &-right {
+          justify-content: flex-end;
+          align-items: flex-end;
+        }
+      }
+    }
+    .slogan-title {
+      width: 100%;
+      @include font-display(small) {
+        font-weight: $font-weight-bold;
+      }
+      & > * {
+        font-weight: inherit;
+      }
+    }
+    .slogan-desc {
+      width: 100%;
+      @include font-body(large) {
+        font-weight: $font-weight-light;
+      };
+      & > * {
+        font-weight: inherit;
+      }
+    }
+  }
+  .box-list {
+    & > ul {
+      display: flex;
+      flex-direction: column;
+      gap: rem($spacing-20);
+      @include respondToMin(tablet) {
+        gap: rem($spacing-24);
+      }
+      @include respondToMin(desktop) {
+        flex-direction: row;
+        gap: rem($spacing-32);
+      }
+    }
+    .box-group {
+      display: flex;
+      height: 100%;
+      padding: rem($spacing-12);
+      align-items: center;
+      gap: rem($spacing-16);
+      background: $invert;
+      @include effect-small;
+      @include template-radius(3);
+      @include respondToMin(tablet) {
+        padding: rem($spacing-16);
+        gap: rem($spacing-20);
+      }
+      @include respondToMin(desktop) {
+        flex: 1;
+        padding: rem($spacing-20);
+        gap: rem($spacing-24);
+      }
+    }
+    &__image {
+      flex-shrink: 0;
+      width: px(72);
+      height: px(72);
+      overflow: hidden;
+      @include template-radius(4);
+      img {
+        width: px(72);
+        height: px(72);
+      }
+      @include respondToMin(tablet) {
+        width: px(108);
+        height: px(108);
+        img {
+          width: px(108);
+          height: px(108);
+        }
+      }
+      @include respondToMin(desktop) {
+        width: px(120);
+        height: px(120);
+        img {
+          width: px(120);
+          height: px(120);
+        }
+      }
+    }
+    &__text {
+      flex: 1;
+      .text-title {
+        @include font-header(xsmall);
+      }
+      .text-desc {
+        padding-top: rem($spacing-4);
+        @include font-body(small) {
+          color: $text-tertiary;
+        }
+        @include respondToMin(tablet) {
+          padding-top: rem($spacing-6);
+        }
+        @include respondToMin(desktoo) {
+          padding-top: rem($spacing-8);
+        }
+      }
+    }
+  }
+  .banner-wrap {
+    position: relative;
+    margin: 0 -#{rem($spacing-24)};
+    @include respondToMin(tablet) {
+      margin: 0 -#{rem($spacing-32)};
+    }
+    @include respondToMin(desktop) {
+      margin: 0 -#{rem($spacing-48)};
+    }
+  }
+  .card-list {
+    &__type1 {
+      & > ul {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: rem($spacing-20);
+        padding: rem($spacing-16) 0;
+        @include respondToMin(tablet) {
+          flex-direction: row;
+          flex-wrap: wrap;
+          gap: 0;
+          margin: -#{rem($spacing-12)};
+          padding: rem($spacing-20) 0;
+          justify-content: flex-start;
+          align-items: flex-start;
+          align-content: flex-start;
+        }
+        @include respondToMin(desktop) {
+          flex-wrap: nowrap;
+          gap: rem($spacing-32);
+          margin: 0;
+          padding: rem($spacing-32) 0;
+        }
+        & > li {
+          width: 100%;
+          @include respondToMin(tablet) {
+            width: 50%;
+            padding: rem($spacing-12);
+          }
+          @include respondToMin(desktop) {
+            flex: 1;
+            width: 100%;
+            padding: 0;
+          }
+        }
+      }
+      .card-list {
+        &__box {
+          display: block;
+          position: relative;
+          width: 100%;
+          height: px(168);
+          padding: rem($spacing-26);
+          background: $invert;
+          overflow: hidden;
+          @include template-radius(2);
+          @include respondToMin(tablet) {
+            height: px(280);
+            padding: rem($spacing-32);
+          }
+          @include respondToMin(desktop) {
+            height: px(388);
+            padding: rem($spacing-40);
+          }
+        }
+        &__text {
+          position: relative;
+          z-index: 5;
+          @include font-header(small);
+        }
+        &__image {
+          position: absolute;
+          bottom: 0;
+          right: 0;
+          img {
+            width: px(168);
+            height: px(168);
+            object-fit: contain;
+            @include respondToMin(tablet) {
+              width: px(280);
+              height: px(280);
+            }
+            @include respondToMin(desktop) {
+              width: px(388);
+              height: px(388);
+            }
+          }
+        }
+      }
+    }
+    &__type2 {
+      padding: rem($spacing-16) 0;
+      & > ul {
+        display: flex;
+        flex-direction: column;
+        gap: rem($spacing-32);
+        @include respondToMin(tablet) {
+          flex-direction: row;
+          flex-wrap: wrap;
+          gap: 0;
+          margin: -#{rem($spacing-16)};
+          padding: rem($spacing-20) 0;
+          justify-content: flex-start;
+          align-items: flex-start;
+          align-content: flex-start;
+        }
+        @include respondToMin(desktop) {
+          flex-wrap: nowrap;
+          gap: rem($spacing-32);
+          margin: 0;
+          padding: rem($spacing-24) 0;
+        }
+        & > li {
+          @include respondToMin(tablet) {
+            width: 50%;
+            padding: rem($spacing-16);
+          }
+          @include respondToMin(desktop) {
+            flex: 1;
+            width: 100%;
+            padding: 0;
+          }
+        }
+      }
+      .card-box {
+        &__label {
+          padding: rem($spacing-16) 0;
+          @include font-header(xsmall) {
+            font-weight: $font-weight-bold;
+            text-align: center;
+          }
+          @include respondToMin(tablet) {
+            padding: rem($spacing-20) 0;
+          }
+          @include respondToMin(desktop) {
+            padding: rem($spacing-24) 0;
+          }
+        }
+      }
+    }
+    &__type3 {
+      & > ul {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: rem($spacing-32);
+        @include respondToMin(tablet) {
+          flex-direction: row;
+          flex-wrap: wrap;
+          gap: 0;
+          margin: -#{rem($spacing-16)};
+          justify-content: flex-start;
+          align-items: flex-start;
+          align-content: flex-start;
+        }
+        @include respondToMin(desktop) {
+          flex-wrap: nowrap;
+          gap: rem($spacing-32);
+          margin: 0;
+          padding: rem($spacing-24) 0;
+        }
+        & > li {
+          width: 100%;
+          @include respondToMin(tablet) {
+            width: 50%;
+            padding: rem($spacing-16);
+          }
+          @include respondToMin(desktop) {
+            flex: 1;
+            width: 100%;
+            padding: 0;
+          }
+        }
+      }
+      .card-box {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        background: $invert;
+        overflow: hidden;
+        @include template-radius(3);
+        &__image {
+          img {
+            height: px(192);
+            object-fit: contain;
+            @include respondToMin(tablet) {
+              height: px(224);
+            }
+            @include respondToMin(desktop) {
+              height: px(324);
+            }
+          }
+        }
+        &__text {
+          padding: rem($spacing-20) rem($spacing-20) rem($spacing-26);
+          @include respondToMin(tablet) {
+            height: px(139);
+            padding: rem($spacing-24);
+          }
+          @include respondToMin(desktop) {
+            height: px(175);
+            padding: rem($spacing-32);
+          }
+          .text-title {
+            @include font-header(xsmall) {
+              font-weight: $font-weight-bold;
+            }
+          }
+          .text-desc {
+            padding-top: rem($spacing-6);
+            @include font-body(small) {
+              color: $text-secondary;
+            }
+            @include respondToMin(tablet) {
+              padding-top: rem($spacing-8);
+              @include text-line(2);
+            }
+            @include respondToMin(tablet) {
+              padding-top: rem($spacing-12);
+            }
+          }
+        }
+      }
+    }
+    &__type4 {
+      padding: rem($spacing-16) 0;
+      @include respondToMin(tablet) {
+        padding: rem($spacing-20) 0;
+      }
+      @include respondToMin(tablet) {
+        padding: rem($spacing-24) 0;
+      }
+      & > ul {
+        display: flex;
+        flex-direction: column;
+        gap: rem(36);
+        @include respondToMin(tablet) {
+          gap: rem(52);
+        }
+        @include respondToMin(desktop) {
+          gap: rem(64);
+        }
+      }
+      .card-box {
+        @include respondToMin(tablet) {
+          display: flex;
+          align-items: center;
+          gap: rem($spacing-38);
+        }
+        @include respondToMin(desktop) {
+          gap: rem($spacing-48);
+        }
+        &__reverse {
+          @include respondToMin(tablet) {
+            flex-direction: row-reverse;
+          }
+        }
+        &__img {
+          overflow: hidden;
+          @include template-radius(3);
+          @include respondToMin(tablet) {
+            flex: none;
+          }
+          img {
+            height: px(260);
+            object-fit: contain;
+            @include respondToMin(tablet) {
+              width: px(268);
+              height: px(223);
+            }
+            @include respondToMin(desktop) {
+              width: px(360);
+              height: px(300);
+            }
+          }
+        }
+        &__text {
+          margin-top: rem($spacing-26);
+          @include respondToMin(tablet) {
+            flex: 1;
+            margin-top: 0;
+          }
+          .text-sub {
+            @include font-header(small) {
+              font-weight: $font-weight-bold;
+            }
+          }
+          .text-title {
+            padding-top: rem($spacing-4);
+            @include font-header {
+              font-weight: $font-weight-bold;
+            }
+            @include respondToMin(tablet) {
+              padding-top: rem($spacing-6);
+            }
+            @include respondToMin(desktop) {
+              padding-top: rem($spacing-8);
+            }
+          }
+          .text-list {
+            padding-top: rem($spacing-4);
+            text-align: left;
+            @include respondToMin(tablet) {
+              padding-top: rem($spacing-12);
+            }
+            @include respondToMin(desktop) {
+              padding-top: rem($spacing-16);
+            }
+            & > ul {
+              display: flex;
+              flex-direction: column;
+              gap: rem($spacing-4);
+              @include respondToMin(tablet) {
+                gap: rem($spacing-6);
+              }
+              li {
+                position: relative;
+                padding-left: rem(10);
+                @include font-body {
+                  color: $text-secondary;
+                }
+                @include respondToMin(tablet) {
+                  padding-left: rem($spacing-12);
+                }
+                &:before {
+                  position: absolute;
+                  top: px(10);
+                  left: 0;
+                  background: $secondary;
+                  @include virtual(px(4), px(4));
+                  @include template-radius(999);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  // section-main
+  &-main {
+    padding-top: rem(76);
+    @include respondToMin(tablet) {
+      padding-top: rem(88);
+    }
+    @include respondToMin(desktop) {
+      padding-top: rem(112);
+    }
+    .vision-group {
+      position: relative;
+      &__top {
+        display: flex;
+        padding: 0 rem($spacing-38) rem($spacing-26);
+        @include respondToMin(tablet) {
+          padding: 0 rem($spacing-38) rem($spacing-32);
+        }
+        svg {
+          width: rem(284);
+          height: rem(58);
+          margin: 0 auto;
+          padding: rem($spacing-4) 0 rem($spacing-8);
+          @include respondToMin(tablet) {
+            width: rem(314);
+            height: rem(52);
+          }
+        }
+      }
+      &__center {
+        @include respondToMin(desktop) {
+          max-width: px(1762);
+          margin: 0 auto;
+        }
+        img {
+          height: px(380);
+          object-fit: cover;
+          @include respondToMin(tablet) {
+            height: px(400);
+          }
+          @include respondToMin(desktop) {
+            height: px(640);
+            //object-fit: contain;
+          }
+        }
+      }
+      &__bottom {
+        display: block;
+        position: absolute;
+        bottom: -#{px(1)};
+        width: 100%;
+        overflow: hidden;
+        .bottom-group {
+          display: flex;
+          height: px(30);
+          &__background {
+            height: px(30);
+            flex: 1 0 0;
+          }
+          &__point {
+            width: px(76);
+            height: px(30);
+            flex-shrink: 0;
+            &:nth-child(2) {
+              svg {
+                margin-left: -#{px(2)};
+              }
+            }
+            &:nth-child(3) {
+              svg {
+                margin-right: -#{px(2)};
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// LayerPopup
+.layer-wrap {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: $dimmed;
+  backdrop-filter: blur(6px);
+  z-index: $index-dimmed;
+  overflow-y: auto;
+  overflow-x: hidden;
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    padding: px($spacing-80) 0;
+  }
+  .layer-popup {
+    display: none;
+    position: initial;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: $index-modal;
+    padding: 0 rem($spacing-64);
+    &__inner {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      height: auto;
+      margin: 0 auto;
+      background: $invert;
+      overflow: hidden;
+      @include template-radius(3);
+      @include respondToMin(tablet) {
+        width: rem(360);
+      }
+    }
+    &__header {
+      flex: none;
+      display: flex;
+      padding: 0;
+      .header-button {
+        margin-left: auto;
+      }
+      .ico-btn {
+        &__nav-close {
+          &::before {
+            @include virtual(px($spacing-32), px($spacing-32));
+          }
+        }
+      }
+    }
+    &__body {
+      flex-grow: 1;
+      padding: rem($spacing-32) rem($spacing-20) rem($spacing-24);
+      overflow-y: initial;
+      @include respondToMin(tablet) {
+        padding: rem($spacing-38) rem($spacing-26) rem($spacing-32);
+      }
+      @include respondToMin(desktop) {
+        padding: rem($spacing-48) rem($spacing-32) rem($spacing-40);
+      }
+    }
+    &__footer {
+      flex: none;
+      .footer-button {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        padding: rem($spacing-20) rem($spacing-32);
+        background-color: $brand;
+        @include font-body {
+          font-weight: $font-weight-bold;
+          color: $text-invert;
+          text-align: center;
+        }
+      }
+    }
+    img {
+      max-width: 100%;
+    }
+
+    &:is(.modal) {
+
+    }
+  }
+  .dimmed {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: $index-dimmed;
+    background: $dimmed;
+    backdrop-filter: blur(6px);
+    @include respondToMin(desktop) {
+      display: none;
+    }
+  }
+
+  &:is(.modal) {
+
+  }
+}
+// LayerPopup 오픈 시 처리
+.popup {
+  overflow: hidden;
+  .layer-wrap {
+    display: block;
+  }
+  .layer-popup {
+    &:is(.show) {
+      display: block;
+    }
+  }
+}

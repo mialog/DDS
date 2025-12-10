@@ -1,0 +1,493 @@
+@use "../variables" as *;
+@use "../functions" as *;
+@use "respond" as *;
+
+/* ============================================
+   Mixins - Typography (Figma 동기화)
+   ============================================ */
+
+// ============================================
+// RESPONSIVE TYPOGRAPHY MIXINS
+// Figma 토큰 기반 반응형 타이포그래피
+// ============================================
+
+// Display - 가장 큰 헤드라인 (히어로 섹션 등)
+@mixin font-display($size: medium) {
+  @if $size == large {
+    font-size: rem($font-size-display-large-mo);
+    line-height: $line-height-default;
+    @include respondToMin(tablet) {
+      font-size: rem($font-size-display-large-ta);
+    }
+    @include respondToMin(desktop) {
+      font-size: rem($font-size-display-large-pc);
+    }
+  } @else if $size == medium {
+    font-size: rem($font-size-display-medium-mo);
+    line-height: $line-height-default;
+    @include respondToMin(tablet) {
+      font-size: rem($font-size-display-medium-ta);
+    }
+    @include respondToMin(desktop) {
+      font-size: rem($font-size-display-medium-pc);
+    }
+  } @else if $size == small {
+    font-size: rem($font-size-display-small-mo);
+    line-height: $line-height-default;
+    @include respondToMin(tablet) {
+      font-size: rem($font-size-display-small-ta);
+    }
+    @include respondToMin(desktop) {
+      font-size: rem($font-size-display-small-pc);
+    }
+  }
+  & {
+    letter-spacing: px($letter-spacing-normal);
+    @content;
+  }
+}
+
+// Header - 섹션 타이틀
+@mixin font-header($size: medium) {
+  @if $size == large {
+    font-size: rem($font-size-header-large-mo);
+    line-height: $line-height-default;
+    @include respondToMin(tablet) {
+      font-size: rem($font-size-header-large-ta);
+    }
+    @include respondToMin(desktop) {
+      font-size: rem($font-size-header-large-pc);
+    }
+  } @else if $size == medium {
+    font-size: rem($font-size-header-medium-mo);
+    line-height: $line-height-default;
+    @include respondToMin(tablet) {
+      font-size: rem($font-size-header-medium-ta);
+    }
+    @include respondToMin(desktop) {
+      font-size: rem($font-size-header-medium-pc);
+    }
+  } @else if $size == small {
+    font-size: rem($font-size-header-small-mo);
+    line-height: $line-height-default;
+    @include respondToMin(tablet) {
+      font-size: rem($font-size-header-small-ta);
+    }
+    @include respondToMin(desktop) {
+      font-size: rem($font-size-header-small-pc);
+    }
+  }
+  & {
+    letter-spacing: px($letter-spacing-normal);
+    @content;
+  }
+}
+
+// Title - 카드, 리스트 등의 타이틀
+@mixin font-title($size: medium) {
+  @if $size == large {
+    font-size: rem($font-size-title-large-mo);
+    line-height: $line-height-title;
+    @include respondToMin(tablet) {
+      font-size: rem($font-size-title-large-ta);
+    }
+    @include respondToMin(desktop) {
+      font-size: rem($font-size-title-large-pc);
+    }
+  } @else if $size == medium {
+    font-size: rem($font-size-title-medium-mo);
+    line-height: $line-height-title;
+    @include respondToMin(tablet) {
+      font-size: rem($font-size-title-medium-ta);
+    }
+    @include respondToMin(desktop) {
+      font-size: rem($font-size-title-medium-pc);
+    }
+  } @else if $size == small {
+    font-size: rem($font-size-title-small-mo);
+    line-height: $line-height-title;
+    @include respondToMin(tablet) {
+      font-size: rem($font-size-title-small-ta);
+    }
+    @include respondToMin(desktop) {
+      font-size: rem($font-size-title-small-pc);
+    }
+  }
+  & {
+    letter-spacing: px($letter-spacing-normal);
+    @content;
+  }
+}
+
+// Body - 본문 텍스트
+@mixin font-body($size: medium) {
+  @if $size == large {
+    font-size: rem($font-size-body-large-mo);
+    line-height: $line-height-body-mo;
+    @include respondToMin(tablet) {
+      font-size: rem($font-size-body-large-ta);
+      line-height: $line-height-body;
+    }
+    @include respondToMin(desktop) {
+      font-size: rem($font-size-body-large-pc);
+    }
+  } @else if $size == medium {
+    font-size: rem($font-size-body-medium-mo);
+    line-height: $line-height-body-mo;
+    @include respondToMin(tablet) {
+      font-size: rem($font-size-body-medium-ta);
+      line-height: $line-height-body;
+    }
+    @include respondToMin(desktop) {
+      font-size: rem($font-size-body-medium-pc);
+    }
+  } @else if $size == small {
+    font-size: rem($font-size-body-small-mo);
+    line-height: $line-height-body-mo;
+    @include respondToMin(tablet) {
+      font-size: rem($font-size-body-small-ta);
+      line-height: $line-height-body;
+    }
+    @include respondToMin(desktop) {
+      font-size: rem($font-size-body-small-pc);
+    }
+  }
+  & {
+    letter-spacing: px($letter-spacing-normal);
+    @content;
+  }
+}
+
+// Label - 버튼, 태그, 캡션 등
+@mixin font-label($size: medium) {
+  @if $size == large {
+    font-size: rem($font-size-label-large-mo);
+    line-height: $line-height-default;
+    @include respondToMin(tablet) {
+      font-size: rem($font-size-label-large-ta);
+    }
+    @include respondToMin(desktop) {
+      font-size: rem($font-size-label-large-pc);
+    }
+  } @else if $size == medium {
+    font-size: rem($font-size-label-medium-mo);
+    line-height: $line-height-default;
+    @include respondToMin(tablet) {
+      font-size: rem($font-size-label-medium-ta);
+    }
+    @include respondToMin(desktop) {
+      font-size: rem($font-size-label-medium-pc);
+    }
+  } @else if $size == small {
+    font-size: rem($font-size-label-small-mo);
+    line-height: $line-height-default;
+    @include respondToMin(tablet) {
+      font-size: rem($font-size-label-small-ta);
+    }
+    @include respondToMin(desktop) {
+      font-size: rem($font-size-label-small-pc);
+    }
+  }
+  & {
+    letter-spacing: px($letter-spacing-normal);
+    @content;
+  }
+}
+
+// Action - 버튼, 링크 등 인터랙티브 요소 (font-label alias)
+@mixin font-action($size: medium) {
+  @include font-label($size) {
+    @content;
+  }
+}
+
+// ============================================
+// NON-RESPONSIVE TYPOGRAPHY MIXINS (Legacy)
+// 단일 사이즈 - 반응형 미적용
+// ============================================
+
+// text-header (non-responsive)
+@mixin text-header($size: medium) {
+  @if $size == large {
+    font-size: rem($font-size-header-large-pc);
+    line-height: $line-height-default;
+    letter-spacing: px($letter-spacing-normal);
+  }
+  @else if $size == medium {
+    font-size: rem($font-size-header-medium-pc);
+    line-height: $line-height-default;
+    letter-spacing: px($letter-spacing-normal);
+  }
+  @else if $size == small {
+    font-size: rem($font-size-header-small-pc);
+    line-height: $line-height-default;
+    letter-spacing: px($letter-spacing-normal);
+  }
+  @content;
+}
+
+// text-title (non-responsive)
+@mixin text-title($size: medium) {
+  @if $size == large {
+    font-size: rem($font-size-title-large-pc);
+    line-height: $line-height-title;
+    letter-spacing: px($letter-spacing-normal);
+  }
+  @else if $size == medium {
+    font-size: rem($font-size-title-medium-pc);
+    line-height: $line-height-title;
+    letter-spacing: px($letter-spacing-normal);
+  }
+  @else if $size == small {
+    font-size: rem($font-size-title-small-pc);
+    line-height: $line-height-title;
+    letter-spacing: px($letter-spacing-normal);
+  }
+  @content;
+}
+
+// text-body (non-responsive)
+@mixin text-body($size: medium) {
+  @if $size == large {
+    font-size: rem($font-size-body-large-pc);
+    line-height: $line-height-body;
+    letter-spacing: px($letter-spacing-normal);
+  }
+  @else if $size == medium {
+    font-size: rem($font-size-body-medium-pc);
+    line-height: $line-height-body;
+    letter-spacing: px($letter-spacing-normal);
+  }
+  @else if $size == small {
+    font-size: rem($font-size-body-small-pc);
+    line-height: $line-height-body;
+    letter-spacing: px($letter-spacing-normal);
+  }
+  @content;
+}
+
+// text-label (non-responsive)
+@mixin text-label($size: medium) {
+  @if $size == large {
+    font-size: rem($font-size-label-large-pc);
+    line-height: $line-height-default;
+    letter-spacing: px($letter-spacing-normal);
+  }
+  @else if $size == medium {
+    font-size: rem($font-size-label-medium-pc);
+    line-height: $line-height-default;
+    letter-spacing: px($letter-spacing-normal);
+  }
+  @else if $size == small {
+    font-size: rem($font-size-label-small-pc);
+    line-height: $line-height-default;
+    letter-spacing: px($letter-spacing-normal);
+  }
+  @content;
+}
+
+/* ============================================
+   Mixins - Radius (Figma 동기화)
+   ============================================ */
+
+// Responsive radius - Figma 레벨 기반
+@mixin template-radius($level: 3) {
+  @if $level == 1 {
+    border-radius: px($radius-mo-1);
+    @include respondToMin(tablet) {
+      border-radius: px($radius-ta-1);
+    }
+    @include respondToMin(desktop) {
+      border-radius: px($radius-pc-1);
+    }
+  } @else if $level == 2 {
+    border-radius: px($radius-mo-2);
+    @include respondToMin(tablet) {
+      border-radius: px($radius-ta-2);
+    }
+    @include respondToMin(desktop) {
+      border-radius: px($radius-pc-2);
+    }
+  } @else if $level == 3 {
+    border-radius: px($radius-mo-3);
+    @include respondToMin(tablet) {
+      border-radius: px($radius-ta-3);
+    }
+    @include respondToMin(desktop) {
+      border-radius: px($radius-pc-3);
+    }
+  } @else if $level == 4 {
+    border-radius: px($radius-mo-4);
+    @include respondToMin(tablet) {
+      border-radius: px($radius-ta-4);
+    }
+    @include respondToMin(desktop) {
+      border-radius: px($radius-pc-4);
+    }
+  } @else if $level == 5 {
+    border-radius: px($radius-mo-5);
+    @include respondToMin(tablet) {
+      border-radius: px($radius-ta-5);
+    }
+    @include respondToMin(desktop) {
+      border-radius: px($radius-pc-5);
+    }
+  } @else if $level == 6 {
+    border-radius: px($radius-mo-6);
+    @include respondToMin(tablet) {
+      border-radius: px($radius-ta-6);
+    }
+    @include respondToMin(desktop) {
+      border-radius: px($radius-pc-6);
+    }
+  } @else if $level == 7 {
+    border-radius: px($radius-mo-7);
+    @include respondToMin(tablet) {
+      border-radius: px($radius-ta-7);
+    }
+    @include respondToMin(desktop) {
+      border-radius: px($radius-pc-7);
+    }
+  } @else if $level == 999 or $level == circle {
+    border-radius: px($radius-circle);
+  }
+}
+
+/* ============================================
+   Mixins - Spacing (Figma 동기화)
+   ============================================ */
+
+// Responsive spacing - Figma 레벨 기반
+// 사용법: @include template-spacing(padding, 5); // padding: 12px (mo) -> 14px (ta) -> 16px (pc)
+@mixin template-spacing($property, $level) {
+  @if $level == 1 {
+    #{$property}: px($spacing-mo-1);
+    @include respondToMin(tablet) { #{$property}: px($spacing-ta-1); }
+    @include respondToMin(desktop) { #{$property}: px($spacing-pc-1); }
+  } @else if $level == 2 {
+    #{$property}: px($spacing-mo-2);
+    @include respondToMin(tablet) { #{$property}: px($spacing-ta-2); }
+    @include respondToMin(desktop) { #{$property}: px($spacing-pc-2); }
+  } @else if $level == 3 {
+    #{$property}: px($spacing-mo-3);
+    @include respondToMin(tablet) { #{$property}: px($spacing-ta-3); }
+    @include respondToMin(desktop) { #{$property}: px($spacing-pc-3); }
+  } @else if $level == 4 {
+    #{$property}: px($spacing-mo-4);
+    @include respondToMin(tablet) { #{$property}: px($spacing-ta-4); }
+    @include respondToMin(desktop) { #{$property}: px($spacing-pc-4); }
+  } @else if $level == 5 {
+    #{$property}: px($spacing-mo-5);
+    @include respondToMin(tablet) { #{$property}: px($spacing-ta-5); }
+    @include respondToMin(desktop) { #{$property}: px($spacing-pc-5); }
+  } @else if $level == 6 {
+    #{$property}: px($spacing-mo-6);
+    @include respondToMin(tablet) { #{$property}: px($spacing-ta-6); }
+    @include respondToMin(desktop) { #{$property}: px($spacing-pc-6); }
+  } @else if $level == 7 {
+    #{$property}: px($spacing-mo-7);
+    @include respondToMin(tablet) { #{$property}: px($spacing-ta-7); }
+    @include respondToMin(desktop) { #{$property}: px($spacing-pc-7); }
+  } @else if $level == 8 {
+    #{$property}: px($spacing-mo-8);
+    @include respondToMin(tablet) { #{$property}: px($spacing-ta-8); }
+    @include respondToMin(desktop) { #{$property}: px($spacing-pc-8); }
+  } @else if $level == 9 {
+    #{$property}: px($spacing-mo-9);
+    @include respondToMin(tablet) { #{$property}: px($spacing-ta-9); }
+    @include respondToMin(desktop) { #{$property}: px($spacing-pc-9); }
+  } @else if $level == 10 {
+    #{$property}: px($spacing-mo-10);
+    @include respondToMin(tablet) { #{$property}: px($spacing-ta-10); }
+    @include respondToMin(desktop) { #{$property}: px($spacing-pc-10); }
+  } @else if $level == 11 {
+    #{$property}: px($spacing-mo-11);
+    @include respondToMin(tablet) { #{$property}: px($spacing-ta-11); }
+    @include respondToMin(desktop) { #{$property}: px($spacing-pc-11); }
+  } @else if $level == 12 {
+    #{$property}: px($spacing-mo-12);
+    @include respondToMin(tablet) { #{$property}: px($spacing-ta-12); }
+    @include respondToMin(desktop) { #{$property}: px($spacing-pc-12); }
+  } @else if $level == 13 {
+    #{$property}: px($spacing-mo-13);
+    @include respondToMin(tablet) { #{$property}: px($spacing-ta-13); }
+    @include respondToMin(desktop) { #{$property}: px($spacing-pc-13); }
+  } @else if $level == 14 {
+    #{$property}: px($spacing-mo-14);
+    @include respondToMin(tablet) { #{$property}: px($spacing-ta-14); }
+    @include respondToMin(desktop) { #{$property}: px($spacing-pc-14); }
+  } @else if $level == 15 {
+    #{$property}: px($spacing-mo-15);
+    @include respondToMin(tablet) { #{$property}: px($spacing-ta-15); }
+    @include respondToMin(desktop) { #{$property}: px($spacing-pc-15); }
+  }
+}
+
+// 단축 믹스인들
+@mixin spacing-padding($level) {
+  @include template-spacing(padding, $level);
+}
+
+@mixin spacing-margin($level) {
+  @include template-spacing(margin, $level);
+}
+
+@mixin spacing-gap($level) {
+  @include template-spacing(gap, $level);
+}
+
+/* ============================================
+   Mixins - Section Spacing (Figma 동기화)
+   ============================================ */
+
+// 섹션 기본 여백
+@mixin template-section($type: default) {
+  @if $type == default {
+    padding-top: px($spacing-mo-13);
+    padding-bottom: px($spacing-mo-13);
+    @include respondToMin(tablet) {
+      padding-top: px($spacing-ta-13);
+      padding-bottom: px($spacing-ta-13);
+    }
+    @include respondToMin(desktop) {
+      padding-top: px($spacing-pc-13);
+      padding-bottom: px($spacing-pc-13);
+    }
+  } @else if $type == large {
+    padding-top: px($spacing-mo-14);
+    padding-bottom: px($spacing-mo-14);
+    @include respondToMin(tablet) {
+      padding-top: px($spacing-ta-14);
+      padding-bottom: px($spacing-ta-14);
+    }
+    @include respondToMin(desktop) {
+      padding-top: px($spacing-pc-14);
+      padding-bottom: px($spacing-pc-14);
+    }
+  } @else if $type == small {
+    padding-top: px($spacing-mo-11);
+    padding-bottom: px($spacing-mo-11);
+    @include respondToMin(tablet) {
+      padding-top: px($spacing-ta-11);
+      padding-bottom: px($spacing-ta-11);
+    }
+    @include respondToMin(desktop) {
+      padding-top: px($spacing-pc-11);
+      padding-bottom: px($spacing-pc-11);
+    }
+  }
+}
+
+// 레이아웃 컨테이너 패딩
+@mixin layout-padding() {
+  padding-left: px($layout-padding-mo);
+  padding-right: px($layout-padding-mo);
+  @include respondToMin(tablet) {
+    padding-left: px($layout-padding-ta);
+    padding-right: px($layout-padding-ta);
+  }
+  @include respondToMin(desktop) {
+    padding-left: px($layout-padding-pc);
+    padding-right: px($layout-padding-pc);
+  }
+}

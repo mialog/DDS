@@ -1,0 +1,44 @@
+@use "../variables" as *;
+
+/* Mixins - Responsive (반응형 - MediaQuery 설정) */
+@mixin respondToMin($media) {
+  @if $media == desktop {
+    @media only screen and (min-width: $responsive-min-desktop + 'px') {
+      @content;
+    }
+  } @else if $media == tablet {
+    @media only screen and (min-width: $responsive-min-tablet + 'px') {
+      @content;
+    }
+  } @else if $media == mobile {
+    @media only screen and (min-width: $responsive-min-mobile + 'px') {
+      @content;
+    }
+  }
+}
+
+@mixin respondToMax($media) {
+  @if $media == desktop {
+    @media only screen and (max-width: $responsive-max-desktop + 'px') {
+      @content;
+    }
+  } @else if $media == tablet {
+    @media only screen and (max-width: $responsive-max-tablet + 'px') {
+      @content;
+    }
+  } @else if $media == mobile {
+    @media only screen and (max-width: $responsive-max-mobile + 'px') {
+      @content;
+    }
+  } @else if $media == min {
+    @media only screen and (max-width: $responsive-max-min + 'px') {
+      @content;
+    }
+  }
+}
+
+@mixin respondToMinMax($minSize, $maxSize) {
+  @media (min-width: $minSize + 'px') and (max-width: $maxSize + 'px') {
+    @content;
+  }
+}
