@@ -183,8 +183,38 @@ body {
 }
 
 .sidebar-header {
-  padding: 20px 16px;
+  padding: 16px 16px 12px;
+}
+
+/* Sidebar Tabs */
+.sidebar-tabs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px;
+  padding: 0 8px 12px;
   border-bottom: 1px solid var(--ds-neutral-80);
+}
+
+.tab-btn {
+  padding: 6px 8px;
+  border: none;
+  background: transparent;
+  color: var(--ds-neutral-50);
+  font-size: 1.1rem;
+  font-weight: 500;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.tab-btn:hover {
+  background: var(--ds-neutral-80);
+  color: var(--ds-neutral-0);
+}
+
+.tab-btn.active {
+  background: var(--ds-lightblue-50);
+  color: var(--ds-neutral-0);
 }
 
 .sidebar-logo {
@@ -231,6 +261,16 @@ body {
 .nav-link.active {
   background: var(--ds-lightblue-50);
   color: var(--ds-neutral-0);
+}
+
+.nav-link.disabled {
+  color: var(--ds-neutral-70);
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.hidden {
+  display: none !important;
 }
 
 .sidebar-footer {
@@ -550,6 +590,164 @@ body {
 .text-sample {
   font-size: 1.1rem;
   font-weight: 500;
+}
+
+/* ============================================
+   Button Component
+   ============================================ */
+.button-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: flex-end;
+}
+
+.button-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.btn-spec {
+  font-size: 1rem;
+  color: var(--ds-text-tertiary);
+  font-family: monospace;
+}
+
+/* Base Button */
+.btn {
+  font-family: inherit;
+  font-weight: 500;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+}
+
+/* Button Sizes (from Figma) */
+.btn-large {
+  height: 61px;
+  padding: 16px 32px;
+  font-size: 1.8rem;
+}
+
+.btn-medium {
+  height: 50px;
+  padding: 12px 24px;
+  font-size: 1.6rem;
+}
+
+.btn-small {
+  height: 36px;
+  padding: 8px 20px;
+  font-size: 1.4rem;
+}
+
+.btn-xsmall {
+  height: 28px;
+  padding: 4px 16px;
+  font-size: 1.2rem;
+}
+
+/* Filled Primary */
+.btn-filled-primary {
+  background: var(--ds-blue-50);
+  color: var(--ds-neutral-0);
+}
+
+.btn-filled-primary:hover {
+  background: var(--ds-blue-60);
+}
+
+.btn-filled-primary:active {
+  background: var(--ds-blue-70);
+}
+
+.btn-filled-primary:disabled {
+  background: var(--ds-neutral-20);
+  color: var(--ds-neutral-50);
+  cursor: not-allowed;
+}
+
+/* Filled Secondary */
+.btn-filled-secondary {
+  background: var(--ds-neutral-10);
+  color: var(--ds-text-primary);
+}
+
+.btn-filled-secondary:hover {
+  background: var(--ds-neutral-20);
+}
+
+.btn-filled-secondary:active {
+  background: var(--ds-neutral-30);
+}
+
+/* Outlined Primary */
+.btn-outlined-primary {
+  background: transparent;
+  color: var(--ds-blue-50);
+  border: 1.5px solid var(--ds-blue-50);
+}
+
+.btn-outlined-primary:hover {
+  background: var(--ds-blue-5);
+}
+
+.btn-outlined-primary:active {
+  background: var(--ds-blue-10);
+}
+
+/* Outlined Secondary */
+.btn-outlined-secondary {
+  background: transparent;
+  color: var(--ds-text-secondary);
+  border: 1.5px solid var(--ds-border-default);
+}
+
+.btn-outlined-secondary:hover {
+  background: var(--ds-neutral-5);
+  border-color: var(--ds-neutral-40);
+}
+
+.btn-outlined-secondary:active {
+  background: var(--ds-neutral-10);
+}
+
+/* Ghost Primary */
+.btn-ghost-primary {
+  background: transparent;
+  color: var(--ds-blue-50);
+}
+
+.btn-ghost-primary:hover {
+  background: var(--ds-blue-5);
+}
+
+.btn-ghost-primary:active {
+  background: var(--ds-blue-10);
+}
+
+/* Ghost Secondary */
+.btn-ghost-secondary {
+  background: transparent;
+  color: var(--ds-text-secondary);
+}
+
+.btn-ghost-secondary:hover {
+  background: var(--ds-neutral-5);
+}
+
+.btn-ghost-secondary:active {
+  background: var(--ds-neutral-10);
+}
+
+/* Coming Soon */
+.coming-soon {
+  color: var(--ds-text-lowest);
+  font-style: italic;
 }
 
 /* ============================================
